@@ -3,15 +3,87 @@
 # Add as many channels as you want — channels with no new videos are skipped.
 
 channels:
-  # Example format. Replace with your actual channels.
-  # - name: "Alex Hormozi"
-  #   url: "https://www.youtube.com/@AlexHormozi"
-  #   topics: ["business", "marketing", "sales"]
-  #   priority: high          # high/medium/low — high gets processed first
-  #
-  # - name: "My First Million"
-  #   url: "https://www.youtube.com/@MyFirstMillionPod"
-  #   topics: ["startups", "ideas", "business"]
-  #   priority: medium
+  - name: "Jack Roberts"
+    url: "https://www.youtube.com/@Itssssss_Jack"
+    topics: ["ai", "automation", "business"]
+    priority: high
 
-  # Add your channels below this line:
+  - name: "Greg Isenberg"
+    url: "https://www.youtube.com/@GregIsenberg"
+    topics: ["startups", "product", "growth"]
+    priority: high
+
+  - name: "Ras Mic"
+    url: "https://www.youtube.com/@rasmic"
+    topics: ["ai", "automation", "build-in-public"]
+    priority: high
+
+  - name: "IndyDevDan"
+    url: "https://www.youtube.com/@indydevdan"
+    topics: ["ai", "coding", "indie-dev"]
+    priority: medium
+
+  - name: "Nick Saraev"
+    url: "https://www.youtube.com/@nicksaraev"
+    topics: ["ai", "automation", "no-code"]
+    priority: medium
+
+  - name: "AI Jason"
+    url: "https://www.youtube.com/@AIJasonZ"
+    topics: ["ai", "tools", "tutorials"]
+    priority: high
+
+  - name: "Jay E | RoboNuggets"
+    url: "https://www.youtube.com/@RoboNuggets"
+    topics: ["ai", "automation", "build-in-public"]
+    priority: medium
+
+  - name: "James NoCode"
+    url: "https://www.youtube.com/@jamesnocode"
+    topics: ["no-code", "automation", "ai"]
+    priority: medium
+
+  - name: "Matthew Berman"
+    url: "https://www.youtube.com/@matthew_berman"
+    topics: ["ai", "tools", "tutorials"]
+    priority: high
+
+  - name: "GaryVee"
+    url: "https://www.youtube.com/@garyvee"
+    topics: ["marketing", "entrepreneurship", "social-media"]
+    priority: medium
+
+  - name: "LangChain"
+    url: "https://www.youtube.com/@LangChain"
+    topics: ["ai", "llm", "development"]
+    priority: medium
+
+  - name: "Matt Wolfe"
+    url: "https://www.youtube.com/@mreflow"
+    topics: ["ai", "tools", "news"]
+    priority: high
+
+  - name: "Cody Schneider"
+    url: "https://www.youtube.com/@codyschneiderx"
+    topics: ["ai", "marketing", "growth"]
+    priority: medium
+
+  - name: "Ben AI"
+    url: "https://www.youtube.com/@BenAI92"
+    topics: ["ai", "automation", "tutorials"]
+    priority: medium
+
+  - name: "Jordan Platten"
+    url: "https://www.youtube.com/@JordanPlatten"
+    topics: ["marketing", "agency", "business"]
+    priority: medium
+
+  - name: "Jannis Moore"
+    url: "https://www.youtube.com/@jannismoore"
+    topics: ["ai", "automation", "build-in-public"]
+    priority: medium
+
+  - name: "Jono Catliff"
+    url: "https://www.youtube.com/@jonocatliff"
+    topics: ["ai", "build-in-public", "indie-dev"]
+    priority: medium
