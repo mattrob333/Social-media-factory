@@ -1,0 +1,27 @@
+# Social accounts and Metricool configuration
+# The loop reads this to know where to post and which API to use.
+
+# Your Metricool API credentials
+metricool:
+  # api_key: "your-metricool-api-key-here"
+  # The loop reads METRICOOL_API_KEY from Hermes .env for security.
+  # If you set it here instead, use a private repo.
+
+# Posting targets
+platforms:
+  x:
+    enabled: true
+    # account_name: "@yourhandle"
+    # Post types: thread, single, poll, quotepost
+    post_types: ["thread", "single"]
+
+  linkedin:
+    enabled: true
+    # account_name: "Your Name"
+    # account_id: "metricool-linkedin-account-id"
+    post_types: ["article", "post"]
+
+# Labels / tags to append to Metricool posts for analytics
+default_tags:
+  - "content-remix"
+  - "ai-assisted"

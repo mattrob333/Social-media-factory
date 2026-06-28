@@ -1,0 +1,34 @@
+# Posting schedule and cadence
+# The loop reads this to decide when and how often to post.
+
+# Timezone for scheduling
+timezone: "America/Chicago"     # Change to your timezone
+
+# How often the loop should check for new content
+loop_cadence: "every 4h"        # Cron expression or "every N" format
+
+# Posting windows (UTC times — the loop converts from your timezone)
+# Posts are queued within these windows
+posting_windows:
+  morning:  "13:00-15:00 UTC"   # 8-10am CT
+  midday:   "17:00-19:00 UTC"   # 12-2pm CT
+  evening:  "22:00-00:00 UTC"   # 5-7pm CT
+
+# How many posts to publish per day per platform
+daily_limits:
+  x:
+    threads: 1                   # Threads per day
+    singles: 2                   # Single posts per day
+    max_total: 3
+  linkedin:
+    posts: 1                     # Posts per day
+    max_total: 1
+
+# Days to post (0=Monday, 6=Sunday)
+active_days: [0, 1, 2, 3, 4]    # Weekdays only
+
+# Minimum gap between posts (in hours) to avoid flooding
+min_gap_hours: 2
+
+# Queued posts — how many to schedule ahead
+queue_depth: 6                   # Keep 6 posts queued in Metricool

@@ -1,0 +1,12 @@
+# History and auto-generated files are tracked in git
+# so the loop can see what it's already processed, but editor
+# temp files and OS files are ignored.
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor temp files
+*.swp
+*.swo
+*~

@@ -1,0 +1,17 @@
+# YouTube channels to scrape for content remixing
+# The loop checks each channel for new uploads every tick.
+# Add as many channels as you want — channels with no new videos are skipped.
+
+channels:
+  # Example format. Replace with your actual channels.
+  # - name: "Alex Hormozi"
+  #   url: "https://www.youtube.com/@AlexHormozi"
+  #   topics: ["business", "marketing", "sales"]
+  #   priority: high          # high/medium/low — high gets processed first
+  #
+  # - name: "My First Million"
+  #   url: "https://www.youtube.com/@MyFirstMillionPod"
+  #   topics: ["startups", "ideas", "business"]
+  #   priority: medium
+
+  # Add your channels below this line:
