@@ -1,27 +1,37 @@
 # Social accounts and Metricool configuration
 # The loop reads this to know where to post and which API to use.
 
-# Your Metricool API credentials
+# Metricool brand settings (discovered via MCP)
 metricool:
-  # api_key: "your-metricool-api-key-here"
-  # The loop reads METRICOOL_API_KEY from Hermes .env for security.
-  # If you set it here instead, use a private repo.
+  brand_id: "5852465"
+  brand_name: "Tier 4 Intelligence"
+  timezone: "America/New_York"
+  # OAuth refresh handled by: ~/hermes/scripts/refresh-metricool-token.py
+  # Token stored at: ~/AppData/Local/hermes/metricool-oauth.json
 
-# Posting targets
+# Posting targets (connected via Metricool)
 platforms:
   x:
     enabled: true
-    # account_name: "@yourhandle"
-    # Post types: thread, single, poll, quotepost
+    account_handle: "@MattRob333"
+    metricool_network: "twitter"
     post_types: ["thread", "single"]
+    # Best times (from Metricool data) — update after first analytics pull
+    best_times: "TBD"
 
   linkedin:
     enabled: true
-    # account_name: "Your Name"
-    # account_id: "metricool-linkedin-account-id"
-    post_types: ["article", "post"]
+    account_id: "urn:li:person:8oDJ0sgSaD"
+    metricool_network: "linkedin"
+    post_types: ["post"]
+    best_times: "TBD"
 
 # Labels / tags to append to Metricool posts for analytics
 default_tags:
   - "content-remix"
   - "ai-assisted"
+
+# Token refresh
+token:
+  refresh_script: "~/AppData/Local/hermes/scripts/refresh-metricool-token.py"
+  oauth_file: "~/AppData/Local/hermes/metricool-oauth.json"

@@ -19,32 +19,43 @@ to your social accounts via Metricool.
 The loop checks this repo at the top of every tick. Anything you push is live
 on the next run — no restarts needed.
 
+## Loop Architecture
+
+Three autonomous loops run against this repo:
+
+| Loop | Schedule | Model | What it does |
+|------|----------|-------|-------------|
+| **1. Daily Ingest** | 6am daily | qwen3.5-flash | Scrapes YouTube + X, scores & buckets content |
+| **2. Content Remix** | 8am, 2pm, 8pm | claude-haiku-4.5 | Generates posts from 🔥 items, schedules via Metricool |
+| **3. Weekly Newsletter** | Friday 4pm | claude-haiku-4.5 | Compiles week's best into newsletter draft |
+
+### Content flow
+```
+channels.yaml ──┐
+                ├──→ Loop 1: queue/inbox/ → queue/scored/
+x-accounts.yaml─┘                              │
+                                               ├──→ Loop 2: queue/drafts/ → Metricool
+                                               │
+                                               └──→ Loop 3: queue/newsletter/
+```
+
 ## Repo Structure
 
 ```
-├── README.md           ← you are here
-├── channels.yaml       ← YouTube channels & X accounts to scrape
-├── accounts.yaml       ← where to post (X, LinkedIn, Metricool config)
-├── voice.md            ← brand voice, tone rules, don't-say-this
-├── schedule.yaml       ← posting cadence, timezone, platform preferences
-├── templates/          ← post format templates
-│   ├── x-thread.md     ← X thread format
-│   └── linkedin-post.md← LinkedIn post format
-├── queue/              ← human-approved content (posted first)
-├── history/            ← auto-generated — what was posted + when
-└── .gitignore
-```
-
-## Loop Integration
-
-The cron job does this on every tick:
-1. `git pull` — get your latest changes
-2. Read `channels.yaml` → scrape new content
-3. Read `voice.md` → apply brand constraints
-4. Read `schedule.yaml` → decide what/when to post
-5. Check `queue/` first for human-approved content
-6. Generate + post via Metricool
-7. Write to `history/` → `git commit` + `git push`
+├── README.md
+├── channels.yaml       ← 17 YouTube channels
+├── x-accounts.yaml     ← 32 X accounts to monitor
+├── accounts.yaml       ← Metricool brand ID + X/LinkedIn handles
+├── voice.md            ← full brand voice + remix engine
+├── schedule.yaml       ← posting cadence + time windows
+├── templates/          ← X thread + LinkedIn post formats
+├── queue/
+│   ├── inbox/          ← raw ingested items
+│   ├── scored/         ← scored + bucketed items
+│   ├── drafts/         ← generated posts
+│   └── newsletter/     ← weekly newsletter drafts
+└── history/
+    └── processed.yaml  ← prevents duplicate processing
 
 ## Quick Links
 
