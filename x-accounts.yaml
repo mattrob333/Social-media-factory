@@ -191,3 +191,9 @@ accounts:
     url: "https://x.com/rauchg"
     topics: ["ai", "devtools", "vercel"]
     priority: medium
+
+  - name: "Ashutosh Shrivastava"
+    handle: "@ai_for_success"
+    url: "https://x.com/ai_for_success"
+    topics: ["ai", "news", "tools", "tutorials"]
+    priority: high
