@@ -1,0 +1,193 @@
+# X (Twitter) accounts to monitor for competitive intelligence and remix content
+# The loop reads these accounts to track what's being discussed in AI/automation
+# and identify content opportunities. Used by the remix engine for:
+#   - Amplify + Apply (credit their take, add Matt's angle)
+#   - Disagree + Why (contrarian counter)
+#   - Steelman-then-break
+
+accounts:
+  - name: "Zephyr"
+    handle: "@Zephyr_hg"
+    url: "https://x.com/Zephyr_hg"
+    topics: ["ai", "automation", "agents"]
+    priority: high
+
+  - name: "dotta"
+    handle: "@dotta"
+    url: "https://x.com/dotta"
+    topics: ["ai", "coding"]
+    priority: medium
+
+  - name: "dax (thdxr)"
+    handle: "@thdxr"
+    url: "https://x.com/thdxr"
+    topics: ["ai", "infrastructure", "devtools"]
+    priority: high
+
+  - name: "Ras Mic"
+    handle: "@Rasmic"
+    url: "https://x.com/Rasmic"
+    topics: ["ai", "automation", "build-in-public"]
+    priority: high
+
+  - name: "Julian Goldie SEO"
+    handle: "@JulianGoldieSEO"
+    url: "https://x.com/JulianGoldieSEO"
+    topics: ["seo", "ai", "content"]
+    priority: medium
+
+  - name: "Shubham Saboo"
+    handle: "@Saboo_Shubham_"
+    url: "https://x.com/Saboo_Shubham_"
+    topics: ["ai", "tools", "tutorials"]
+    priority: medium
+
+  - name: "Jason (jxnlco)"
+    handle: "@jxnlco"
+    url: "https://x.com/jxnlco"
+    topics: ["ai", "coding", "llm"]
+    priority: high
+
+  - name: "Tom Dörr"
+    handle: "@tom_doerr"
+    url: "https://x.com/tom_doerr"
+    topics: ["ai", "automation", "build-in-public"]
+    priority: medium
+
+  - name: "Peter Steinberger"
+    handle: "@steipete"
+    url: "https://x.com/steipete"
+    topics: ["ai", "coding", "tools"]
+    priority: high
+
+  - name: "Matthew Berman"
+    handle: "@MatthewBerman"
+    url: "https://x.com/MatthewBerman"
+    topics: ["ai", "tools", "tutorials"]
+    priority: high
+
+  - name: "Elvis (omarsar0)"
+    handle: "@omarsar0"
+    url: "https://x.com/omarsar0"
+    topics: ["ai", "nlp", "research"]
+    priority: medium
+
+  - name: "Harrison Chase"
+    handle: "@hwchase17"
+    url: "https://x.com/hwchase17"
+    topics: ["ai", "langchain", "agents"]
+    priority: high
+
+  - name: "Teknium"
+    handle: "@Teknium"
+    url: "https://x.com/Teknium"
+    topics: ["ai", "models", "open-source"]
+    priority: high
+
+  - name: "Cody Schneider"
+    handle: "@codyschneider"
+    url: "https://x.com/codyschneider"
+    topics: ["ai", "marketing", "growth"]
+    priority: medium
+
+  - name: "Sam Altman"
+    handle: "@sama"
+    url: "https://x.com/sama"
+    topics: ["ai", "future", "industry"]
+    priority: high
+
+  - name: "The Boring Marketer"
+    handle: "@boringmarkete"
+    url: "https://x.com/boringmarkete"
+    topics: ["marketing", "growth", "strategy"]
+    priority: medium
+
+  - name: "Nous Research"
+    handle: "@NousResearch"
+    url: "https://x.com/NousResearch"
+    topics: ["ai", "models", "open-source", "agents"]
+    priority: high
+
+  - name: "Garry Tan"
+    handle: "@garrytan"
+    url: "https://x.com/garrytan"
+    topics: ["startups", "venture", "tech"]
+    priority: medium
+
+  - name: "Matt Shumer"
+    handle: "@mattshumer_"
+    url: "https://x.com/mattshumer_"
+    topics: ["ai", "automation", "build-in-public"]
+    priority: medium
+
+  - name: "Ryan Carson"
+    handle: "@ryancarson"
+    url: "https://x.com/ryancarson"
+    topics: ["ai", "education", "build-in-public"]
+    priority: medium
+
+  - name: "Dan Shipper"
+    handle: "@danshipper"
+    url: "https://x.com/danshipper"
+    topics: ["ai", "writing", "tools"]
+    priority: medium
+
+  - name: "Yohei Nakajima"
+    handle: "@yoheinakajim"
+    url: "https://x.com/yoheinakajim"
+    topics: ["ai", "agents", "automation"]
+    priority: high
+
+  - name: "Kache (yacineMTB)"
+    handle: "@yacineMTB"
+    url: "https://x.com/yacineMTB"
+    topics: ["ai", "coding", "tools"]
+    priority: medium
+
+  - name: "Alex Finn"
+    handle: "@AlexFinn"
+    url: "https://x.com/AlexFinn"
+    topics: ["ai", "build-in-public", "automation"]
+    priority: medium
+
+  - name: "Thariq"
+    handle: "@trq212"
+    url: "https://x.com/trq212"
+    topics: ["ai", "agents", "automation"]
+    priority: medium
+
+  - name: "Pietro Schirano"
+    handle: "@skirano"
+    url: "https://x.com/skirano"
+    topics: ["ai", "design", "tools"]
+    priority: medium
+
+  - name: "Hassan (nutlope)"
+    handle: "@nutlope"
+    url: "https://x.com/nutlope"
+    topics: ["ai", "coding", "open-source"]
+    priority: medium
+
+  - name: "Andrej Karpathy"
+    handle: "@karpathy"
+    url: "https://x.com/karpathy"
+    topics: ["ai", "deep-learning", "education"]
+    priority: high
+
+  - name: "Logan Kilpatrick"
+    handle: "@OfficialLoganK"
+    url: "https://x.com/OfficialLoganK"
+    topics: ["ai", "google", "tools"]
+    priority: high
+
+  - name: "Kitze"
+    handle: "@thekitze"
+    url: "https://x.com/thekitze"
+    topics: ["coding", "indie-dev", "build-in-public"]
+    priority: medium
+
+  - name: "Guillermo Rauch"
+    handle: "@rauchg"
+    url: "https://x.com/rauchg"
+    topics: ["ai", "devtools", "vercel"]
+    priority: medium
