@@ -197,3 +197,9 @@ accounts:
     url: "https://x.com/ai_for_success"
     topics: ["ai", "news", "tools", "tutorials"]
     priority: high
+
+  - name: "Natia Kurdadze"
+    handle: "@natiakourdadze"
+    url: "https://x.com/natiakourdadze"
+    topics: ["marketing", "growth", "startups", "customer-acquisition"]
+    priority: high
