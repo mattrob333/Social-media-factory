@@ -25,5 +25,12 @@ anything gets built.
 
 ## Backlog
 
-_No entries yet — this file is written to by the daily ingest loop once
-bookmark-miner and the X/YouTube scrapes start surfacing BUILD_WITH_IT items._
+### AI Cost & Routing Governance Layer (working name: PedigreeRoute)
+- **Source:** GitHub trending — diegosouzapw/OmniRoute, https://github.com/diegosouzapw/OmniRoute
+- **Date surfaced:** 2026-07-01
+- **The gap:** Enterprises running multi-agent systems have no governed way to route across 200+ model providers for cost/fallback — they either hand-roll it or eat OpenRouter-style markup with zero audit trail on which model touched what data.
+- **The wedge:** A managed, audited routing layer bolted onto Pedigree's existing governance/SoD framework — same free-gateway routing OmniRoute proves is viable, but with per-agent policy, data-retention control, and cost attribution baked in. Sell as "AI cost governance," not "another router."
+- **Maps to:** Pedigree (governance layer extension)
+- **Status:** WATCH
+
+_Older entries will accumulate below as future ticks surface BUILD_WITH_IT items._
