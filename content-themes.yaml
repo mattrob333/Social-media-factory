@@ -1,0 +1,64 @@
+# Recurring content franchises — the "thought leadership" formats layered on
+# top of the raw remix engine (voice.md Section 6). These give the factory a
+# recognizable shape instead of one-off posts every day.
+#
+# The content-remix loop picks a theme per slot based on `cadence` below and
+# what inventory is available in queue/scored/.
+
+themes:
+  - id: bookmark-spotlight
+    name: "Bookmark Spotlight"
+    format: "X single or thread"
+    cadence: "daily, whenever a HIGH-confidence bookmark-miner item exists"
+    source: "queue/scored (bucket=AI_TOOL or METHOD_FRAMEWORK, decision != IGNORE)"
+    structure: "Hook -> What it is -> What it does -> practical use case -> Matt's take"
+    notes: >
+      This is the direct output of the bookmark-miner skill's content angle
+      format (Hook/What/So-What/Now-What/Synergy). Pull straight from
+      queue/scored, don't re-derive.
+
+  - id: top-ten-tools
+    name: "Top 10 AI Tools This Week"
+    format: "X thread (10 posts) + LinkedIn carousel-style single post"
+    cadence: "weekly, Wednesday"
+    source: "queue/scored, last 7 days, bucket=AI_TOOL, ranked by monetization decision then novelty"
+    structure: >
+      Post 1: hook + the stakes ("most of these you haven't seen"). Posts 2-11:
+      one tool per post — name, one-line what-it-does, one practical use case,
+      link/credit. Close: which one Matt is actually adopting and why.
+    rule: "No filler tools. If fewer than 10 qualify, ship 'Top N' honestly — never pad."
+
+  - id: trending-repos
+    name: "Most Trending GitHub Repos"
+    format: "X thread or LinkedIn post"
+    cadence: "weekly, Monday"
+    source: "queue/inbox, theme=github-trending, filtered by github-trending.yaml"
+    structure: "Hook (what's spiking and why) -> 4-6 repos: name, what it does, who should clone it, Matt's take"
+    notes: "Always credit the repo/org. This is Matt curating, not claiming the work."
+
+  - id: saas-idea-of-the-week
+    name: "SaaS Idea of the Week"
+    format: "LinkedIn post (long-form) + optional X single"
+    cadence: "weekly, Thursday"
+    source: "saas-ideas.md, highest-confidence unshipped entry"
+    structure: >
+      The gap/problem -> why existing tools don't solve it -> the wedge ->
+      why Matt could ship it fast (harness-over-model framing) -> soft CTA
+      only if it maps to a real Pedigree/TakeoffSpeed/BCOS extension.
+    notes: "This is thought leadership on 'here's a business I see,' not a pitch deck. Give the idea away — that's the brand."
+
+  - id: news-jack
+    name: "Timely News-Jack"
+    format: "X single (primary), LinkedIn only if it lands B2B"
+    cadence: "same-day, as soon as detected — this is the fast lane, see queue/timely/"
+    source: "x-accounts.yaml follows + breaking news matching bookmarked tool categories"
+    structure: "React within hours: Amplify+Apply, Disagree+Why, or Extend (voice.md remix modes). One idea, no windup."
+    sla: "Must be drafted and sent to Telegram for approval within the same ingest cycle it was detected in (target: under 4 hours from detection to Matt's queue)."
+
+# Weekly rotation at a glance (Mon-Thu posting days only)
+weekly_calendar:
+  monday: ["trending-repos", "bookmark-spotlight"]
+  tuesday: ["bookmark-spotlight", "news-jack (as needed)"]
+  wednesday: ["top-ten-tools"]
+  thursday: ["saas-idea-of-the-week", "bookmark-spotlight"]
+  friday: ["newsletter-compile (no new posts)"]

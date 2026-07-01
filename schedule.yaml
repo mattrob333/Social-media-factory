@@ -4,8 +4,13 @@
 # Timezone for scheduling
 timezone: "America/Chicago"     # Change to your timezone
 
-# How often the loop should check for new content
-loop_cadence: "every 4h"        # Cron expression or "every N" format
+# How often each loop checks for new content
+loop_cadence:
+  bookmark_miner: "0 7 * * 1-4"    # 7am Mon-Thu — mines X bookmarks
+  daily_ingest: "0 6 * * *"        # 6am daily — YouTube + X accounts + GitHub trending
+  news_jack_scan: "every 4h"       # fast lane for same-day timely reactions, Mon-Thu
+  content_remix: "0 8,14,20 * * *" # 8am / 2pm / 8pm — draft + grade + queue for approval
+  newsletter: "0 16 * * 5"         # Friday 4pm — compile weekly newsletter
 
 # Posting windows (UTC times — the loop converts from your timezone)
 # Posts are queued within these windows
@@ -25,10 +30,21 @@ daily_limits:
     max_total: 1
 
 # Days to post (0=Monday, 6=Sunday)
-active_days: [0, 1, 2, 3, 4]    # Weekdays only
+active_days: [0, 1, 2, 3, 4]    # Weekdays only; content themes run Mon-Thu (see content-themes.yaml)
 
 # Minimum gap between posts (in hours) to avoid flooding
 min_gap_hours: 2
 
 # Queued posts — how many to schedule ahead
 queue_depth: 6                   # Keep 6 posts queued in Metricool
+
+# News-jack fast lane SLA (see content-themes.yaml + queue/timely/README.md)
+news_jack_sla_hours: 4           # detection -> drafted -> graded -> Telegram approval
+
+# Grading — every draft passes through references/grader-prompt.md via a
+# separate sub-agent before reaching queue/graded/. Max 2 grading passes;
+# anything still failing after a rewrite gets flagged to Matt directly
+# instead of looping silently.
+grading:
+  max_passes: 2
+  grader_must_be_separate_agent: true

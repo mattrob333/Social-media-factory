@@ -1,0 +1,28 @@
+# GitHub trending scrape config
+# Feeds the recurring "Most Trending GitHub Repos" content theme (see
+# content-themes.yaml). Checked once daily as part of the ingest loop.
+
+source:
+  # https://github.com/trending?since=daily plus topic-filtered trending pages
+  trending_url: "https://github.com/trending?since=daily"
+  topic_pages:
+    - "https://github.com/trending/python?since=daily"
+    - "https://github.com/trending?since=daily&spoken_language_code=en"
+  topics_of_interest:
+    - "ai-agents"
+    - "llm"
+    - "automation"
+    - "mcp"
+    - "rag"
+    - "developer-tools"
+
+# Only surface repos matching topics of interest OR crossing a star velocity
+# threshold — don't just dump the raw trending page.
+filters:
+  min_stars_gained_today: 50
+  relevance_topics: ["ai", "agent", "llm", "automation", "mcp", "devtools"]
+
+# Output: one paragraph per repo — what it does, why it's trending, who'd use
+# it, and Matt's one-line take (does this belong in his stack, a client's, or
+# neither). Written to queue/inbox/ tagged theme: github-trending.
+max_repos_per_tick: 8

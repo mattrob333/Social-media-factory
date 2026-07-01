@@ -1,0 +1,37 @@
+# X Bookmarks — primary content source
+# The bookmark-miner loop reads Matt's saved X bookmarks daily, classifies each
+# one, and turns anything monetizable into a content brief. This is the highest
+# signal source in the factory: Matt already curated these by hand.
+#
+# Feeds: queue/inbox/ (raw) -> queue/scored/ (bucketed + monetization-scored)
+#
+# See: ~/.hermes/skills/content-strategy/bookmark-miner/SKILL.md for the full
+# loop spec (classification buckets, monetization decisions, grader prompt).
+
+source:
+  x_user_id: "368698447"          # Matt's X user ID (mcp_xapi_get_users_bookmarks)
+  max_per_tick: 50
+
+# Classification buckets (mirrors bookmark-miner skill — do not diverge)
+buckets:
+  - AI_TOOL
+  - METHOD_FRAMEWORK
+  - BUSINESS_MODEL
+  - TECH_GENERAL
+  - CULTURE_INSIGHT
+  - OTHER
+
+# Monetization decisions applied to every non-OTHER bookmark
+monetization_decisions:
+  - USE_IT        # adopt in Pedigree / TakeoffSpeed / BCOS / this factory
+  - BUILD_WITH_IT # component/pattern for something Matt should build (-> saas-ideas.md)
+  - OFFER_IT      # paid service/consulting angle
+  - WATCH         # interesting, not actionable yet
+  - IGNORE        # not relevant, discard
+
+# Bookmarks tagged BUILD_WITH_IT with confidence >= 4 get appended to
+# saas-ideas.md automatically by the ingest loop.
+saas_idea_threshold: 4
+
+# State file (owned by the bookmark-miner loop, not this repo)
+state_file: "C:\\Users\\mrobe\\AppData\\Local\\hermes\\loop-state\\bookmark-miner.json"
