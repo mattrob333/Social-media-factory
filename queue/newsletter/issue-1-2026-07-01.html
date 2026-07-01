@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flight Plan — Issue 1 | Matt Roberts</title>
+<style>
+  :root {
+    --ink: #14181f;
+    --paper: #fbfaf7;
+    --rule: #d8d4c8;
+    --accent: #0d5c63;
+    --accent2: #b5471b;
+    --muted: #5a5f6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 48px 24px 96px; }
+  header.masthead {
+    text-align: center;
+    border-bottom: 3px double var(--ink);
+    padding-bottom: 20px;
+    margin-bottom: 8px;
+  }
+  header.masthead .kicker {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  header.masthead h1 {
+    font-size: 42px;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+  header.masthead .tagline {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+  }
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    margin: 12px 0 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  section { margin-bottom: 44px; }
+  .section-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent2);
+    margin-bottom: 6px;
+  }
+  h2 {
+    font-size: 26px;
+    margin: 0 0 16px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+  }
+  p { margin: 0 0 14px; font-size: 17px; }
+  .lede { font-size: 19px; }
+  .byline-take { font-style: italic; color: var(--muted); font-size: 14px; margin-top: -6px; }
+  ul.radar { list-style: none; padding: 0; margin: 0; }
+  ul.radar li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  ul.radar li:last-child { border-bottom: none; }
+  ul.radar .item-title { font-weight: bold; }
+  ul.radar .item-take { color: var(--muted); font-style: italic; }
+  ul.radar .item-source {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    padding: 20px 22px;
+    border-radius: 2px;
+  }
+  .card.warm { border-left-color: var(--accent2); }
+  .card h3 { margin: 0 0 8px; font-size: 19px; }
+  .card .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; color: var(--muted); }
+  .repo-list { list-style: none; padding: 0; margin: 0; }
+  .repo-list li { padding: 12px 0; border-bottom: 1px dashed var(--rule); }
+  .repo-list li:last-child { border-bottom: none; }
+  .repo-list .name { font-weight: bold; font-family: 'Courier New', monospace; }
+  .repo-list .stars {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: var(--accent2);
+    font-weight: 700;
+  }
+  .btn {
+    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    background: var(--accent);
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin-top: 12px;
+  }
+  footer {
+    margin-top: 60px;
+    border-top: 3px double var(--ink);
+    padding-top: 20px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  code { background: #eee; padding: 1px 5px; border-radius: 3px; font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">The Operator-Pilot Dispatch</div>
+    <h1>Flight Plan</h1>
+    <div class="tagline">AI governance, agent building, and the tools worth your time — from a guy who flies a CRJ 18 days a month and ships AI the rest.</div>
+  </header>
+
+  <div class="meta-row">
+    <span>Issue No. 1</span>
+    <span>Week of July 1, 2026</span>
+  </div>
+
+  <section id="take-of-the-week">
+    <div class="section-label">The Take of the Week</div>
+    <h2>Model access just became a governance problem, not a capability problem</h2>
+    <p class="lede">
+      OpenAI shipped GPT-5.6 Sol and Terra this week — Sol a capability step-up
+      at the same price as 5.5, Terra matching 5.5's performance at roughly
+      half the cost. Neither shipped to everyone. Both launched as a limited
+      preview after a government-requested review.
+    </p>
+    <p>
+      Read past the spec sheet and the real story isn't the benchmark
+      delta. It's that frontier model access is now policy-gated, not just
+      capability-gated. For two years the industry narrative has been "the
+      best model wins." That's no longer sufficient. Now the question an
+      enterprise buyer has to answer before they even evaluate a model is:
+      who approved us to have this, and can we prove it if asked.
+    </p>
+    <p>
+      That's not a hypothetical for regulated industries. Insurance,
+      healthcare, aerospace, and finance already run on approval chains for
+      everything else that touches customer data or safety-critical systems.
+      AI access is catching up to that reality whether vendors are ready or
+      not. If your AI rollout plan doesn't already have an answer to "who
+      approved this, and what's the audit trail," you're not behind on
+      capability — you're behind on the thing that will actually get asked
+      in a vendor review or an audit.
+    </p>
+    <p>
+      Checklists beat genius. The cockpit settled that decades ago. AI ops
+      is relearning it the hard way, one policy-gated model release at a
+      time.
+    </p>
+  </section>
+
+  <section id="persona-of-the-week">
+    <div class="section-label">Persona Prompt of the Week — Free Download</div>
+    <h2>The Contract Reviewer</h2>
+    <div class="card warm">
+      <h3>A compliance-minded lens for reading AI vendor contracts before you sign</h3>
+      <p>
+        Every AI vendor contract your company signs this year has a
+        non-human-identity problem buried in it somewhere — permissions
+        scope, data retention, audit trail, or all three. This week's free
+        download is a persona built to read exactly for that: a reviewer
+        who scans SaaS/AI vendor terms for governance gaps around agent
+        permissions, NHI, retention, and auditability, before you're the
+        one explaining the gap to a regulator.
+      </p>
+      <p class="note">Paste it into your own AI tool. It's yours, no strings.</p>
+      <a class="btn" href="#" id="persona-download-link">Download the Persona (.txt)</a>
+    </div>
+  </section>
+
+  <section id="skill-of-the-day">
+    <div class="section-label">Free Skill of the Day</div>
+    <h2>Turn any GitHub repo into a one-paragraph build brief</h2>
+    <p>
+      Next time you find a trending repo and think "could I ship a wedge off
+      this," don't just star it. Paste this into your AI tool with the repo
+      link:
+    </p>
+    <div class="card">
+      <p style="font-family: 'Courier New', monospace; font-size: 14px;">
+        "Read this repo's README and top issues. In one paragraph: (1) what
+        gap it fills, (2) who's actually paying for a worse version of this
+        today, (3) the smallest wedge I could ship in a week that a business
+        would pay for, (4) what I'd have to add that this repo doesn't have.
+        Be concrete — no 'game-changer' language, name the actual missing
+        piece."
+      </p>
+    </div>
+    <p>
+      That fourth question is the one that matters. The gap between "cool
+      open-source project" and "sellable wedge" is almost always something
+      boring: governance, support, a UI a non-technical buyer can use,
+      or compliance. Find that gap and you have a business, not a bookmark.
+    </p>
+  </section>
+
+  <section id="governance-corner">
+    <div class="section-label">The Governance Corner</div>
+    <h2>Who approved this?</h2>
+    <p>
+      OpenAI's Sol/Terra preview gate (see Take of the Week) is this week's
+      clearest example: a frontier lab just demonstrated, in public, that
+      "we shipped the best model" isn't the whole story anymore — "who
+      signed off on giving it to you" is now part of the release itself.
+    </p>
+    <p>
+      Every AI agent your company deploys is the same question at smaller
+      scale. It has credentials. It has permissions. It can act on systems.
+      In most orgs it has no manager, no review, and no line on the org
+      chart. Segregation of duties didn't stop mattering because the
+      employee is a model.
+    </p>
+  </section>
+
+  <section id="open-source-swap">
+    <div class="section-label">The Open-Source Swap</div>
+    <h2>Trending this week — worth an operator's attention</h2>
+    <p>Four things earned real attention this week. Not ten — most "top 10" lists exist to hit a round number.</p>
+    <ul class="repo-list">
+      <li>
+        <span class="name">diegosouzapw/OmniRoute</span> <span class="stars">+459 stars today</span><br>
+        Free, self-hostable AI gateway routing across 231+ model providers (50+ free), with
+        auto-fallback and 15-95% token compression. Model routing — the thing companies
+        were paying for a year ago — just became a config file. Worth evaluating as a
+        cost/fallback layer under existing agent deployments, not a replacement for them.
+      </li>
+      <li>
+        <span class="name">obra/superpowers</span> <span class="stars">+884 stars today</span><br>
+        An agentic skills framework + dev methodology packaged as a forkable repo — with
+        Claude itself listed as a contributor. Same shape as any serious internal skills
+        library: procedural memory the agent can actually reuse, not just a prompt.
+      </li>
+      <li>
+        <span class="name">browser-use/video-use</span> <span class="stars">+722 stars today</span><br>
+        The same pattern that made browser automation agentic — the agent drives the
+        app's real interface instead of a bespoke integration — now applied to video
+        editing. Watch this pattern. It's spreading to every category of software.
+      </li>
+      <li>
+        <span class="name">google/agents-cli</span> <span class="stars">+433 stars today</span><br>
+        Google's official CLI for building, evaluating, and deploying agents on GCP. The
+        cloud vendors are fighting over who owns the "agent deployment surface" the same
+        way they fought over Kubernetes distros a decade ago.
+      </li>
+    </ul>
+  </section>
+
+  <section id="on-the-radar">
+    <div class="section-label">On the Radar</div>
+    <h2>What else crossed the desk this week</h2>
+    <ul class="radar">
+      <li>
+        <div class="item-title">Matthew Berman published a full Hermes tutorial</div>
+        <div class="item-take">Called it "the best thing since OpenClaw" to 700K subscribers — an outside voice independently landing on the same runtime this newsletter is built on.</div>
+        <div class="item-source">via @MatthewBerman</div>
+      </li>
+      <li>
+        <div class="item-title">Greg Isenberg on why most "learn AI" advice is bad</div>
+        <div class="item-take">The advice that scales is "build something small this week," not "take a course." Tools change monthly; the habit of shipping doesn't.</div>
+        <div class="item-source">via Greg Isenberg</div>
+      </li>
+      <li>
+        <div class="item-title">Rasmic on "lock-in" as a build strategy</div>
+        <div class="item-take">Worth reading against the grain — lock-in only works if the thing you're locking someone into is actually better, not just harder to leave.</div>
+        <div class="item-source">via @Rasmic</div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="building-in-public">
+    <div class="section-label">Building in Public</div>
+    <h2>What's shipping</h2>
+    <p>
+      This issue was drafted, graded for AI-slop, and assembled by the same
+      agent pipeline that runs the rest of this newsletter's content —
+      bookmarks mined, GitHub trending scanned, drafts graded by a separate
+      agent before anything reaches a human. The pipeline itself is the
+      build update this week.
+    </p>
+  </section>
+
+  <footer>
+    Flight Plan is written and reviewed by a human before it goes out — this
+    issue was drafted with agent assistance and edited by Matt. No auto-post,
+    no auto-send. If something here doesn't hold up, reply and tell him.
+    <br><br>
+    &copy; 2026 · Read past issues at the archive link on this newsletter's
+    home page.
+  </footer>
+
+</div>
+</body>
+</html>
