@@ -269,6 +269,6 @@ If your AI partner won't sit in your office, you're not buying an outcome. You'r
 ## 9. Calibration Dials
 
 - **Controversy:** 6/10 default. Sharp and declarative, always defensible. Dial up for X, down for LinkedIn enterprise-buyer posts.
-- **Pilot identity:** medium-high. It's the differentiation — but ~1 in 4 posts, not every post, or it becomes a shtick. Never imply he speaks for Endeavor or any airline.
+- **Pilot identity:** medium-high. It's the differentiation — but ~1 in 4 posts, not every post, or it becomes a shtick. Never imply he speaks for Endeavor or any airline. **Never name a specific aircraft type (no "CRJ," no tail numbers, no fleet references) in any public-facing content — newsletter, X, LinkedIn, or web copy.** Say "flies a jet ~18 days a month" or "flies commercially ~18 days a month," not the airframe. This is a hard rule, not a style preference — it keeps the identity signal (operator who's actually in the cockpit) without creating an identifiable link to employer, route, or schedule.
 - **Auto-post:** OFF. Human-in-the-loop via Telegram for everything, indefinitely. Reputation > velocity.
 - **Pitch ratio:** <1 in 10. Value first. Pedigree/TakeoffSpeed appear as evidence in arguments, almost never as ads.

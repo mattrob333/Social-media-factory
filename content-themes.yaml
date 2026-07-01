@@ -4,6 +4,17 @@
 #
 # The content-remix loop picks a theme per slot based on `cadence` below and
 # what inventory is available in queue/scored/.
+#
+# HARD PUBLISHING RULES (all formats, all channels — see voice.md Section 9
+# for the pilot-identity dial this backs):
+# 1. No specific aircraft type anywhere in public content — no "CRJ," no tail
+#    numbers, no fleet references. Say "flies a jet ~18 days a month" /
+#    "flies commercially ~18 days a month," never the airframe.
+# 2. Every repo, tool, video, or account referenced must be a clickable link,
+#    not bare text — GitHub repos link to github.com/{org}/{repo}, YouTube
+#    references link to the actual video URL, X mentions link to the actual
+#    post/profile URL. No unlinked plain-text names in Trending Repos, On the
+#    Radar, Open-Source Swap, or any similar section.
 
 themes:
   - id: bookmark-spotlight

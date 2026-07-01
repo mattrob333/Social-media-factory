@@ -3,6 +3,14 @@
 Used by the weekly newsletter loop (Friday) to assemble the draft. See
 `voice.md` Section 7 for the full assembly prompt and section rules.
 
+## Hard rules (see voice.md Section 9 + content-themes.yaml)
+
+- No specific aircraft type ("CRJ," tail numbers, fleet references) anywhere
+  in the newsletter. Use "flies a jet ~18 days a month."
+- Every repo, tool, video, or account named in On the Radar, Open-Source
+  Swap, Trending Repos, or any similar section must be an actual clickable
+  link (`<a href="...">`), not bare text.
+
 ---
 
 ```markdown
