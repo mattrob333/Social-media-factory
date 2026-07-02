@@ -13,19 +13,19 @@ Went looking for the best AI tooling from the last week. Found 4 worth your time
 
 ---
 
-OmniRoute — free, self-hostable AI gateway routing across 231+ providers, 50+ free, with auto-fallback and 15-95% token compression. Your "model strategy" just became a config file. If you're paying real money for API routing, look at this before you renew.
+OmniRoute — free, self-hostable AI gateway routing across 231+ providers, 50+ free, with auto-fallback and 15-95% token compression. Your "model strategy" just became a config file. If you're paying real money for API routing, look at this before you renew. https://github.com/diegosouzapw/OmniRoute
 
 ---
 
-Hermes (Nous Research) — the agent runtime I run this entire business on. Matthew Berman just did a full tutorial calling it "the best thing since OpenClaw" to his 700K subs. I'm not amplifying a cold pitch — I'm confirming what he independently found: this is what production agent ops looks like. via @MatthewBerman
+Hermes (Nous Research) — the agent runtime I run this entire business on. Matthew Berman just did a full tutorial calling it "the best thing since OpenClaw" to his 700K subs. I'm not amplifying a cold pitch — I'm confirming what he independently found: this is what production agent ops looks like. via @MatthewBerman https://www.youtube.com/watch?v=TML-0HmxWCE
 
 ---
 
-video-use, from the browser-use team. Same pattern that made browser automation agentic, now applied to video editing: the agent drives the app's actual interface instead of a bespoke integration. +722 stars in a day. Watch this pattern — it's spreading to every category of software.
+video-use, from the browser-use team. Same pattern that made browser automation agentic, now applied to video editing: the agent drives the app's actual interface instead of a bespoke integration. +722 stars in a day. Watch this pattern — it's spreading to every category of software. https://github.com/browser-use/video-use
 
 ---
 
-google/agents-cli — Google's official CLI for building, evaluating, and deploying agents on GCP. The cloud vendors are fighting over who owns the "agent deployment surface" the same way they fought over Kubernetes distros a decade ago. +433 stars in a day.
+google/agents-cli — Google's official CLI for building, evaluating, and deploying agents on GCP. The cloud vendors are fighting over who owns the "agent deployment surface" the same way they fought over Kubernetes distros a decade ago. +433 stars in a day. https://github.com/google/agents-cli
 
 ---
 
