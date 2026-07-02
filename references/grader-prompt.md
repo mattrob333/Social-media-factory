@@ -1,8 +1,22 @@
 # Grader Sub-Agent Prompt
 
-Used by every loop that produces a post (content-remix, news-jack, bookmark-
-miner). MUST be a separate `delegate_task` call from whatever generated the
-draft — a model cannot reliably grade its own output.
+Used by every loop that produces a post (content-remix, news-jack,
+bookmark-miner). MUST be a genuinely separate model call from whatever
+generated the draft — a model cannot reliably grade its own output.
+
+**Mechanism: `mcp_openrouter_chat_send`, NOT `delegate_task`.** `delegate_task`
+is an async/background tool — it returns immediately and its result re-enters
+the conversation later as a new message, which only works across cron *ticks*
+(a two-tier build loop where a supervisor runs on a slower cadence and can
+tolerate a subagent finishing on the next pass). A single cron tick in this
+pipeline is one-shot: it cannot poll or wait for a background result within
+the same run. Use `mcp_openrouter_chat_send(model="deepseek/deepseek-v4-flash",
+message=<grading prompt + draft text>)` instead — this is a real, separate
+model (different family than the claude-haiku-4.5 drafting agent) and it
+returns synchronously in the same tool call. This was a real production bug
+(2026-07-02): the delegate_task version left 7 items stuck ungraded for a
+full day because the loop waited ~2 hours for background results that never
+arrived within the tick.
 
 ## Full Prompt
 
@@ -52,9 +66,32 @@ on the next pass.
 
 ## Where grading fits in the pipeline
 
-`queue/drafts/` (raw draft) → **grader** → PASS → `queue/graded/` (waiting on
-Matt) → Telegram approval → `queue/approved/` → posted → `history/`.
+`queue/drafts/` (raw draft) → **grader** (synchronous `mcp_openrouter_chat_send`
+call) → PASS → `queue/graded/` (waiting on Matt) → Telegram approval →
+`queue/approved/` → posted → `history/`.
 
 FAIL sends it back to `queue/drafts/` with the FIX note prepended as an HTML
 comment. Max 2 grading passes per item — if it still fails after a rewrite,
 flag it to Matt directly instead of looping silently.
+
+## Failure handling (per-item isolation — do not let one item block the tick)
+
+Grading is a fast, synchronous API call now, not a background task, so it
+should essentially never "fail to return." But if the `mcp_openrouter_chat_send`
+call itself errors (provider hiccup, rate limit):
+
+1. Retry once.
+2. Still erroring? Do a documented **self-review** against this same rubric
+   (the generating agent re-reads its own draft against all 6 criteria) and
+   move it to `queue/graded/` with an HTML comment `<!-- SELF-REVIEWED: grader
+   API call failed twice, see run log -->` prepended, so Matt sees the
+   provenance flag while reviewing. This is a deliberate departure from a
+   coding-loop's "never merge unverified work" posture — a content post that
+   waits an extra day for human approval anyway is low-risk, and Matt is the
+   real backstop before anything goes out. Losing a whole day's content
+   because one grading API call hiccupped is a worse failure mode than
+   shipping one self-reviewed item into the human queue.
+3. **One item's grading trouble never blocks other items in the same tick.**
+   Grade each item independently; a stuck/failed item gets flagged (or
+   self-reviewed per above) and the loop moves on to the next one.
+

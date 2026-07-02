@@ -42,9 +42,15 @@ queue_depth: 6                   # Keep 6 posts queued in Metricool
 news_jack_sla_hours: 4           # detection -> drafted -> graded -> Telegram approval
 
 # Grading — every draft passes through references/grader-prompt.md via a
-# separate sub-agent before reaching queue/graded/. Max 2 grading passes;
-# anything still failing after a rewrite gets flagged to Matt directly
-# instead of looping silently.
+# synchronous mcp_openrouter_chat_send call (a genuinely separate model,
+# NOT delegate_task — delegate_task is async/background and stalls a
+# single-tick cron job; see grader-prompt.md for the 2026-07-02 incident
+# this fixed) before reaching queue/graded/. Max 2 grading passes; anything
+# still failing after a rewrite gets flagged to Matt directly. If the grader
+# call itself errors twice, self-review against the same rubric and flag
+# the item as SELF-REVIEWED rather than blocking the whole tick.
 grading:
   max_passes: 2
   grader_must_be_separate_agent: true
+  grader_mechanism: "mcp_openrouter_chat_send (synchronous) — not delegate_task"
+  on_grader_call_failure: "retry once, then self-review + flag SELF-REVIEWED, never block other items"
