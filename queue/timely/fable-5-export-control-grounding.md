@@ -6,6 +6,18 @@ theme: news-jack
 mode: extend
 source: "https://x.com/claudeai (Fable 5 / Mythos 5 export control restoration, June 30 - July 1 2026)"
 ---
+<!-- FAILED GRADING (pass 2 of 2, final): grader flagged CRITERION 2 (CONCRETE)
+and CRITERION 4 (MONETIZABLE/POV-BACKED) as FAIL. Reason given: "Fable 5,"
+"Mythos 5," and "Anthropic" are named but the Commerce Department export-control
+grounding/re-certification claim could not be independently verified against a
+real, citable action -- it reads as a plausible-but-unconfirmed premise rather
+than sourced reporting. FIX instruction from grader: replace with a verified
+regulatory action (real BIS filing, EU AI Office suspension, or specific model
+recall notice) and cite it concretely, or drop the post. Flagging to Matt
+instead of shipping an unverified claim as reported fact -- news-jack content
+touching export-control/regulatory claims needs a checkable source before it's
+safe to post. Leaving in queue/timely/ per grader-prompt.md failure handling
+(max 2 passes exhausted, do not silently discard). -->
 
 The Commerce Department just grounded and re-certified a frontier model like it was an aircraft type.
 
