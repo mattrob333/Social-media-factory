@@ -57,6 +57,13 @@ erode trust in the pipeline.
    = contrarian claim -> why -> framework -> application -> sharp landing
    line, no "agree?" close.
 
+7. SOURCE VERIFIED (news-jack items only — auto-PASS for non-timely themes):
+   the frontmatter carries a `verified_source` URL pointing at a primary
+   source (official announcement, named-outlet article, or the specific X
+   post when the post itself IS the event), and the post's factual premise
+   matches what that source supports. FAIL any timely item whose premise
+   rests on one unverified social-post claim about an external event.
+
 Return, for each criterion: PASS or FAIL + one-sentence reason. If ANY
 criterion fails, return a "FIX:" line with the specific rewrite instruction
 — do not just say "fix the voice," name the exact phrase and what to replace

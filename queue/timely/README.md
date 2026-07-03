@@ -36,10 +36,26 @@ web (news search)  ──────────────────┘
                           Telegram approval → queue/approved/ or discard
 ```
 
+## Source verification (required before drafting)
+
+The factual premise of a news-jack must be traceable to a citable primary
+source: a specific X post URL, an official announcement page, or a named-outlet
+article actually fetched. One social post *claiming* something happened is not
+verification of the thing itself. Reacting to **discourse** ("everyone is
+arguing about Y") is self-verifying — the posts are the event. Reacting to a
+**claimed fact** (a regulation, acquisition, release) requires the underlying
+fact to check out, or the item gets skipped with a note. A draft on a false
+premise burns credibility and a grading + review cycle downstream — the
+2026-07-02 "Fable 5 export control" draft died at the grader for exactly this.
+
+Frontmatter must carry `verified_source:` (the primary-source URL that passed
+this gate) — the remix loop's grader fails anything without one.
+
 ## File format
 
 Same frontmatter as `queue/approved/` — platform, type, optional scheduled
-time — plus a `detected_at` field so staleness is auditable.
+time — plus a `detected_at` field so staleness is auditable and a
+`verified_source` field (see above).
 
 ```markdown
 ---
@@ -49,6 +65,7 @@ detected_at: 2026-07-01T14:32:00Z
 theme: news-jack
 mode: amplify-apply   # or disagree-why / extend
 source: "https://x.com/..."
+verified_source: "https://openai.com/blog/..."   # primary source that confirms the premise
 ---
 
 Post content here.
