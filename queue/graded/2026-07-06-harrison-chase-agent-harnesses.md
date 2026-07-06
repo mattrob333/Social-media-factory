@@ -6,6 +6,7 @@ theme: news-jack
 mode: amplify-apply
 source: "https://x.com/hwchase17/status/2073793142739132625"
 verified_source: "https://x.com/hwchase17/status/2073793142739132625"
+grade: PASS (pass 1)
 ---
 
 Harrison Chase just said the agent industry shifted from frameworks to harnesses. He's right.

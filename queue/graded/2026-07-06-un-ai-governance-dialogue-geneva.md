@@ -5,7 +5,8 @@ detected_at: 2026-07-06T15:30:00Z
 theme: news-jack
 mode: amplify-apply
 source: "https://x.com/Zephyr_hg/status/2073976481315750216"
-verified_source: "https://www.un.org/global-dialogue-ai-governance/en"
+verified_source: "https://www.un.org/global-dialogue-ai-governance/en ; https://www.reuters.com/world/agentic-ai-may-require-regulatory-reform-boes-breeden-says-2026-06-30/"
+grade: PASS (pass 2 — pass 1 failed SOURCE VERIFIED because the Bank of England claim had no primary source cited; added Reuters article confirming BoE Deputy Gov. Sarah Breeden's 2026-06-30 statement)
 ---
 
 The UN's first Global Dialogue on AI Governance opens today in Geneva. The Bank of England just said existing frameworks can't handle autonomous agents.

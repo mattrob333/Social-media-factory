@@ -6,6 +6,7 @@ theme: news-jack
 mode: amplify-apply
 source: "https://x.com/Teknium/status/2074057253188186623"
 verified_source: "https://x.com/Teknium/status/2074057253188186623"
+grade: PASS (pass 1)
 ---
 
 Fable 5 blocks queries that mention "machine learning."
