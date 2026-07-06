@@ -5,7 +5,13 @@ detected_at: 2026-07-06T19:00:00Z
 theme: news-jack
 mode: extend
 source: "https://x.com/MatthewBerman/status/2074151429837820128"
-verified_source: "https://community.openai.com/t/false-positive-cyber-abuse-warning-possibly-related-to-false-api-billing/1384820"
+verified_source: "https://x.com/MatthewBerman/status/2074151429837820128"
+grade: PASS (pass 2 — pass 1 failed criterion 7, verified_source corrected to point at the primary event post itself)
+# verified_source note: the event IS Berman's own post (screenshot of the flag +
+# reply thread of "same email, no idea why" from other devs) — discourse is
+# self-verifying per queue/timely/README.md. The community.openai.com thread
+# was corroborating pattern evidence, not the primary source for THIS incident,
+# which is why grader pass 1 failed criterion 7.
 ---
 
 OpenAI's automated safety system just flagged Matthew Berman — one of the most visible AI content creators on the platform — for "cyber abuse."
