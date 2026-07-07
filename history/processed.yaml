@@ -3,7 +3,7 @@
 # Tracks every source item that's been processed to prevent duplicates.
 
 last_ingest: "2026-07-06T07:00:00Z"  # ISO timestamp of last successful ingest run (Mon Jul 6 - trending-repos+bookmark-spotlight day)
-last_content_remix_tick: "2026-07-06T13:01:00Z"  # cleared 4 timely backlog items (fable5, harrison-chase, amodei, un-geneva) + drafted/graded 1 trending-repos LinkedIn post
+last_content_remix_tick: "2026-07-07T01:01:00Z"  # cleared 2 timely backlog items (log-is-the-agent, openwiki-wikis), both PASS graded via mcp_openrouter_chat_send. No new drafts — Mon daily budget (x:3, li:1) already exceeded by earlier ticks today (5 X singles + 1 LinkedIn already graded).
 
 youtube:
   # Format: channel_url: last_processed_video_id
