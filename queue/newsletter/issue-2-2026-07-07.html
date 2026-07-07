@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flight Plan — Issue 2 | Matt Roberts</title>
+<style>
+  :root {
+    --ink: #14181f;
+    --paper: #fbfaf7;
+    --rule: #d8d4c8;
+    --accent: #0d5c63;
+    --accent2: #b5471b;
+    --muted: #5a5f6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px 96px; }
+  .hero {
+    width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+    border-radius: 2px;
+    display: block;
+  }
+  header.masthead {
+    text-align: center;
+    border-bottom: 3px double var(--ink);
+    padding-bottom: 20px;
+    margin-bottom: 8px;
+  }
+  header.masthead .kicker {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  header.masthead h1 {
+    font-size: 42px;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+  header.masthead .tagline {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+  }
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    margin: 12px 0 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  section { margin-bottom: 44px; }
+  .section-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent2);
+    margin-bottom: 6px;
+  }
+  h2 {
+    font-size: 26px;
+    margin: 0 0 16px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+  }
+  p { margin: 0 0 14px; font-size: 17px; }
+  .lede { font-size: 19px; }
+  .byline-take { font-style: italic; color: var(--muted); font-size: 14px; margin-top: -6px; }
+  ul.radar { list-style: none; padding: 0; margin: 0; }
+  ul.radar li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  ul.radar li:last-child { border-bottom: none; }
+  ul.radar .item-title { font-weight: bold; }
+  ul.radar .item-take { color: var(--muted); font-style: italic; margin: 2px 0; }
+  ul.radar .item-source {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    padding: 20px 22px;
+    border-radius: 2px;
+  }
+  .card.warm { border-left-color: var(--accent2); }
+  .card h3 { margin: 0 0 8px; font-size: 19px; }
+  .card .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; color: var(--muted); }
+  .repo-list { list-style: none; padding: 0; margin: 0; }
+  .repo-list li { padding: 12px 0; border-bottom: 1px dashed var(--rule); }
+  .repo-list li:last-child { border-bottom: none; }
+  .repo-list .name { font-weight: bold; font-family: 'Courier New', monospace; }
+  .repo-list .stars {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: var(--accent2);
+    font-weight: 700;
+  }
+  .btn {
+    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    background: var(--accent);
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin-top: 12px;
+  }
+  .checklist { list-style: none; padding: 0; margin: 0; }
+  .checklist li {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 15px;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: "☐ ";
+    font-size: 18px;
+    color: var(--accent);
+    margin-right: 4px;
+  }
+  .checklist .item-label { font-weight: bold; }
+  .checklist .item-desc { color: var(--muted); font-size: 13px; }
+  footer {
+    margin-top: 60px;
+    border-top: 3px double var(--ink);
+    padding-top: 20px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  code { background: #eee; padding: 1px 5px; border-radius: 3px; font-size: 15px; }
+  a { color: var(--accent); }
+  a:hover { color: var(--accent2); }
+  .repo-list a.name { text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  ul.radar .item-source a { text-decoration: none; }
+  @media (max-width: 600px) {
+    .wrap { padding: 0 16px 64px; }
+    header.masthead h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <img src="hero.png" alt="Cockpit instrument panel at dusk" class="hero">
+
+  <header class="masthead">
+    <div class="kicker">The Operator-Pilot Dispatch</div>
+    <h1>Flight Plan</h1>
+    <div class="tagline">AI governance, agent building, and the tools worth your time — from a guy who flies a jet eighteen days a month and ships AI the rest.</div>
+  </header>
+
+  <div class="meta-row">
+    <span>Issue No. 2</span>
+    <span>Week of July 7, 2026</span>
+  </div>
+
+  <section id="take-of-the-week">
+    <div class="section-label">The Take of the Week</div>
+    <h2>The log is the agent</h2>
+    <p class="lede">
+      Four things happened this week that point to the same conclusion: we've been optimizing the wrong layer. It's not the model. It's the runtime.
+    </p>
+    <p>
+      First, <strong>Harrison Chase</strong> said the industry has shifted from frameworks to harnesses. Frameworks gave you vocabulary — chains, tools, prompts. Harnesses give you runtime: identity, permissions, audit, rollback. He's right, and the distinction isn't semantic. A framework is something you write to. A harness is something that runs you.
+    </p>
+    <p>
+      Second, <strong>Yohei Nakajima</strong> published <em>The Log Is the Agent</em> — a runtime architecture where the event log is the system of record and the agent is a reactive projection of that log. Your model is ephemeral; your log is permanent. If you can replay any run from its event stream, fork state at any point, and trace every artifact back to the exact model call that produced it, you have determinism, auditability, and debuggability in one decision.
+    </p>
+    <p>
+      Third, <strong>Rasmic</strong> shipped boringcomputers.com — spin up ephemeral compute, hand it to an agent, get an app back, and it self-destructs. Ephemeral compute + agent + self-destruct is the right pattern for most agent use cases. You don't want state you can't explain. You don't want an agent that persists its mistakes. You want a sandbox that lives exactly as long as the task and dies clean.
+    </p>
+    <p>
+      Fourth, the <strong>Bank of England</strong> said existing frameworks can't handle autonomous agents. The <strong>UN</strong> opened its first Global Dialogue on AI Governance in Geneva. The question from both: who approved this, and can you prove it?
+    </p>
+    <p>
+      The thread through all four is the same. We spent two years optimizing model capability — benchmarks, parameter counts, context windows. The models are good enough now. The bottleneck is the harness: how you feed them context, how you track what they did, how you audit their permissions, how you kill an agent that goes sideways.
+    </p>
+    <p>
+      Stop designing agents around the model call. Design them around the event stream. The model is the actor. The log is the agent.
+    </p>
+  </section>
+
+  <section id="on-the-radar">
+    <div class="section-label">On the Radar</div>
+    <h2>What else crossed the desk this week</h2>
+    <ul class="radar">
+      <li>
+        <div class="item-title">dax: AI disrupts companies, not jobs</div>
+        <div class="item-take">Companies are junking SaaS products by hooking agents directly to databases — a Slack slash command replacing twelve dashboard clicks. The companies built on data friction are the ones that won't survive, not the workers.</div>
+        <div class="item-source">via <a href="https://x.com/thdxr/status/2074336697974988996" target="_blank" rel="noopener">@thdxr</a></div>
+      </li>
+      <li>
+        <div class="item-title">Teknium: Fable 5 blocks queries that mention "machine learning"</div>
+        <div class="item-take">An ML model that can't discuss ML because its classifier matched a keyword isn't safe — it's unaccountable. In aviation we'd call this a systemic false positive nobody's tracking. Log every refusal, audit the classifier, publish the rate.</div>
+        <div class="item-source">via <a href="https://x.com/Teknium/status/2074057253188186623" target="_blank" rel="noopener">@Teknium</a></div>
+      </li>
+      <li>
+        <div class="item-title">OpenAI flagged Matthew Berman for "cyber abuse"</div>
+        <div class="item-take">An automated safety system flagged one of the most visible AI creators with zero human review and no recourse except going viral. Every platform running agents will face this. The API key is your single point of failure — not just the model.</div>
+        <div class="item-source">via <a href="https://x.com/MatthewBerman/status/2074151429837820128" target="_blank" rel="noopener">@MatthewBerman</a></div>
+      </li>
+      <li>
+        <div class="item-title">Rasmic: Devin's cloud agent is an org chart entry, not a tool</div>
+        <div class="item-take">You're not prompting a model anymore — you're managing a persistent digital worker with a terminal, browser, debugger, and sandbox. The company that solves the governance part will get more value than the one chasing the demo.</div>
+        <div class="item-source">via <a href="https://x.com/Rasmic/status/2074339318487765033" target="_blank" rel="noopener">@Rasmic</a></div>
+      </li>
+      <li>
+        <div class="item-title">OpenWiki hit 7K stars in a week</div>
+        <div class="item-take">LangChain's CLI that writes and maintains a structured wiki of your codebase. The real payoff isn't productivity — it's governance. Once every agent decision traces back to a documented wiki, you have an audit trail for what the agent knew when it made each call.</div>
+        <div class="item-source">via <a href="https://www.langchain.com/blog/introducing-openwiki-an-open-source-agent-for-repo-documentation" target="_blank" rel="noopener">LangChain</a></div>
+      </li>
+      <li>
+        <div class="item-title">Dario Amodei: software goes to ~zero marginal cost</div>
+        <div class="item-take">True, but incomplete. Free code has no warranty. An agent that books a wire transfer or emails a client is worthless the moment nobody can say who approved it. The model got cheap. Accountability is still expensive.</div>
+        <div class="item-source">via <a href="https://x.com/Zephyr_hg/status/2073976481315750216" target="_blank" rel="noopener">Zephyr / WSJ Davos</a></div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="open-source-swap">
+    <div class="section-label">The Open-Source Swap</div>
+    <h2>Trending — the infrastructure signal this week</h2>
+    <p>Six repos hit GitHub trending this week that tell you exactly where agent infrastructure is headed. None of them are chatbots. The model isn't the bottleneck. The harness is where the work is happening.</p>
+    <ul class="repo-list">
+      <li>
+        <a class="name" href="https://github.com/openai/codex-plugin-cc" target="_blank" rel="noopener">openai/codex-plugin-cc</a><br>
+        One agent calling another — Codex wired into Claude Code. That's not a productivity hack, it's the org chart. Once agents delegate to agents, someone has to own the permission boundary between them.
+      </li>
+      <li>
+        <a class="name" href="https://github.com/alibaba/page-agent" target="_blank" rel="noopener">alibaba/page-agent</a><br>
+        Browser-native GUI agent that clicks and fills forms in-page. The real win isn't "AI browses the web" — it's that you stop paying a human to do repetitive form entry across forty client accounts.
+      </li>
+      <li>
+        <a class="name" href="https://github.com/usestrix/strix" target="_blank" rel="noopener">usestrix/strix</a><br>
+        Open-source AI penetration testing, past eleven hundred stars this week. Security tooling is the first place agentic AI has to prove it's trustworthy — which is the audit-trail problem all over again.
+      </li>
+      <li>
+        <a class="name" href="https://github.com/facebook/astryx" target="_blank" rel="noopener">facebook/astryx</a><br>
+        Agent-ready design system — UI components built assuming an agent, not a human, will assemble the page. The frontend layer is starting to treat agents as first-class users. Real signal.
+      </li>
+      <li>
+        <a class="name" href="https://github.com/ogulcancelik/herdr" target="_blank" rel="noopener">ogulcancelik/herdr</a><br>
+        Terminal-based agent multiplexer. Because when you have more than one agent, you need someone to keep them from stepping on each other.
+      </li>
+      <li>
+        <a class="name" href="https://github.com/JuliusBrussee/caveman" target="_blank" rel="noopener">JuliusBrussee/caveman</a><br>
+        Token-efficiency joke repo that's oddly instructive. Half of "prompt engineering" advice right now is just "stop wasting tokens."
+      </li>
+    </ul>
+  </section>
+
+  <section id="one-you-can-use">
+    <div class="section-label">One You Can Use</div>
+    <h2>Give your agent a governance checklist</h2>
+    <p>
+      Most agent deployments skip governance entirely — no permissions model, no audit trail, no escalation path. Here's a six-question briefing you can paste into your agent tool's system slot before the next deployment. It won't fix everything, but it will catch the gap most teams don't see until an incident makes it visible.
+    </p>
+    <div class="card warm">
+      <h3>Agent Pre-flight Briefing</h3>
+      <p style="font-family: 'Courier New', monospace; font-size: 14px;">
+        "Before you take any action outside this chat, answer these six questions:<br><br>
+        1. What data do you need, and do you have explicit permission to access it?<br>
+        2. Who owns your output and can be held accountable if it's wrong?<br>
+        3. Can every decision you make be traced back to a specific instruction, tool call, or model output?<br>
+        4. What happens if a dependency (API, model provider, file system) fails mid-task?<br>
+        5. How does a human stop you mid-operation if something looks wrong?<br>
+        6. What log evidence would exist six months from now if this went wrong?<br><br>
+        If you can't answer all six, flag the gap — don't proceed."
+      </p>
+    </div>
+    <p>
+      This works because it reframes the problem. Most agents get asked "what can you do?" and answer with capability. This briefing asks "what governs what you do?" and surfaces the gaps before they surface themselves.
+    </p>
+  </section>
+
+  <section id="building-in-public">
+    <div class="section-label">Building in Public</div>
+    <h2>What's shipping</h2>
+    <p>
+      This issue was assembled from the same agent pipeline that runs everything in this newsletter — bookmarks mined across 17 YouTube channels and 33 X accounts, GitHub trending scanned, each item graded by a separate grader agent against a 7-criteria rubric before it ever reaches a human for review. The full chain, from ingest to publish, runs through Hermes with separation of duties between the curator agent, the grader agent, and the human.
+    </p>
+    <p>
+      The pipeline itself is the build update this week. Pedigree's manifests define every agent in the chain: identity, permissions, tools, and the audit trail that ties each graded item back to its source. If you're building anything with multiple agents, you'll hit the same governance questions this pipeline answers — not in theory, but every time a grader overrules a curator or a human overrules the grader.
+    </p>
+  </section>
+
+  <footer>
+    Flight Plan is written and reviewed by a human before it goes out — this issue was drafted with agent assistance and edited by Matt. No auto-post, no auto-send. If something here doesn't hold up, reply and tell him.
+    <br><br>
+    &copy; 2026 &middot; Past issues at the archive.
+  </footer>
+
+</div>
+</body>
+</html>
