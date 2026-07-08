@@ -3,7 +3,7 @@
 # Tracks every source item that's been processed to prevent duplicates.
 
 last_ingest: "2026-07-08T06:00:00Z"  # ISO timestamp of last successful ingest run (Wed Jul 8 — 3 timely items graded, GitHub trending scanned)
-last_content_remix_tick: "2026-07-08T09:05:00Z"  # Wed Jul 8 tick: cleared 3 leftover timely PASS items (gemini-v2, langchain re-graded after attribution fix), drafted+graded 1 new LinkedIn top-tools post (Wed theme), X daily budget already at cap from news-jack backlog so held new X drafts
+last_content_remix_tick: "2026-07-08T19:08:00Z"  # Wed Jul 8 evening tick: cleared all remaining queue/timely leftovers — gpt-live-voice (X, extend) PASSed as-is; gpt-56-sol-governance-b2b (LinkedIn, amplify-apply) FAILed pass 1 on 6/7 criteria (AI-isms opener, vague order ref, press-release close, buried so-what, 7-paragraph overrun, and grader flagged verified_source URL as suspicious) — re-verified the Engadget URL via direct fetch (confirmed real, premise matched exactly), rewrote to fix all 6, PASSed pass 2/2. Deduped 3 already-graded timely raw copies (anthropic-abnormal, macos-forbidden-targets, gpt-5-6-sol-launch — identical/near-identical to existing graded versions) and removed the stale gpt-56-sol-launch.md raw dupe. No new theme drafts this tick — Wed top-tools already drafted+graded earlier today, X/LinkedIn daily budgets already at cap from today's news-jack volume. fable5-harness-not-model and salesforce-agentforce-commerce-ga remain flagged in queue/drafts/ (max_passes reached in a prior tick, unchanged this tick).
 
 youtube:
   # Format: channel_url: last_processed_video_id
