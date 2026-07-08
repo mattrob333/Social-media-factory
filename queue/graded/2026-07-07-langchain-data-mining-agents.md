@@ -1,3 +1,4 @@
+<!-- GRADED: PASS (all 7 criteria by mcp_openrouter_chat_send, model: deepseek/deepseek-v4-flash) -->
 ---
 platform: x
 type: single
@@ -8,7 +9,7 @@ source: "https://x.com/hwchase17/status/2074642346130776323"
 verified_source: "https://www.langchain.com/blog/improving-agents-is-a-data-mining-problem"
 ---
 
-LangChain just published something I've been saying for months: improving agents is a data mining problem, not a model problem.
+Vivek Trivedy and the LangChain Labs team just published something I've been saying for months: improving agents is a data mining problem, not a model problem.
 
 Their team mined agent traces, found failure patterns (plan-flailing, no self-verification, zero testing), and gained 13.7 points on Terminal Bench 2.0 by tweaking only the harness — same model the whole time.
 
