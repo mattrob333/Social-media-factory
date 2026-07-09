@@ -1,0 +1,45 @@
+# AI job-disruption evidence tracker — powers the newsletter's
+# "Disruption Watch" section.
+#
+# The daily ingest / news-jack loops tag any scraped item that contains a
+# CONCRETE, sourced claim about AI changing headcount or job functions:
+# named company + role/function + number (layoffs, hiring freezes attributed
+# to AI, productivity mandates, role redefinitions). Tagged items get
+# `bucket: DISRUPTION` in their scored file and are compiled into the digest.
+#
+# Hard rule: receipts only. A CEO saying "AI will change everything" is NOT
+# a disruption item. "Company X cut N roles in function Y and attributed it
+# to AI [link]" is. Every published item needs a linkable primary-ish source.
+# Distinguish "AI-attributed" from "AI-washed" (cover for ordinary cuts) —
+# when ambiguous, say so; the skepticism is on-brand.
+
+signals_to_capture:
+  - "Layoffs or hiring freezes explicitly attributed to AI (company + number + function)"
+  - "Role redefinitions: job postings rewritten to require AI-tool fluency"
+  - "Earnings-call statements tying margin/headcount plans to AI adoption"
+  - "Fresh labor-market studies with per-occupation exposure data"
+  - "Counter-signals: companies rehiring after over-cutting for AI"
+
+sources:
+  - name: "Layoffs.fyi"
+    url: "https://layoffs.fyi/"
+    cadence: weekly
+  - name: "TrueUp layoff tracker"
+    url: "https://www.trueup.io/layoffs"
+    cadence: weekly
+  - name: "Challenger, Gray & Christmas job-cut reports"
+    url: "https://www.challengergray.com/press/press-releases/"
+    cadence: monthly
+    notes: "Names 'AI' as a stated cause category in monthly job-cut data."
+  - name: "Stanford Digital Economy Lab / labor-market AI studies"
+    url: "https://digitaleconomy.stanford.edu/"
+    cadence: monthly
+  - name: "Anthropic Economic Index"
+    url: "https://www.anthropic.com/economic-index"
+    cadence: monthly
+    notes: "Occupation-level usage data — which tasks are actually being delegated."
+  - name: "X monitoring (existing x-accounts.yaml loop)"
+    cadence: daily
+    notes: "Tag qualifying items during normal ingest — e.g. the Jul 2026 Microsoft layoffs-redefinition story."
+
+output: "tag as bucket: DISRUPTION in queue/scored/; newsletter loop pulls the 2-3 strongest per issue"

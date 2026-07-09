@@ -1,0 +1,62 @@
+# Model rankings scrape — powers the newsletter's "The Flight Deck" section
+# (top models by mission) and Generative Media Watch.
+#
+# A weekly tick (suggest: Thursday, before the Friday newsletter loop) scrapes
+# the sources below, reconciles them into top-3 per category, and writes
+# queue/inbox/YYYY-MM-DD-model-rankings.md with:
+#   - top 3 models per category, each with a one-line "why"
+#   - what MOVED since last week (new entrant, rank change) — movement is the
+#     story; a static list is filler
+#   - source + as-of date for every claim
+#
+# Rules:
+#   - Never invent a ranking. If sources disagree, say so — that IS the take.
+#   - Every ranking claim must carry a linkable source and date.
+#   - Cost-per-token matters as much as rank for the operator's note. Pull
+#     pricing where available (OpenRouter/Artificial Analysis expose it).
+
+categories:
+  - id: coding
+    name: "Coding"
+    notes: "Agentic coding + repo-scale work, not toy completions."
+  - id: writing
+    name: "Writing & Comms"
+    notes: "Long-form drafting, tone control, editing. Exec comms use case."
+  - id: business-analysis
+    name: "Business Analysis"
+    notes: "Reasoning over documents, data extraction, financial/strategic analysis."
+  - id: agents-automation
+    name: "Agents & Automation"
+    notes: "Tool use, long-horizon tasks, reliability under a harness."
+  - id: image-gen
+    name: "Image Generation"
+    section: media-watch          # feeds Generative Media Watch, not Flight Deck
+  - id: video-gen
+    name: "Video Generation"
+    section: media-watch
+
+sources:
+  - name: "LMArena leaderboards"
+    url: "https://lmarena.ai/leaderboard"
+    covers: [coding, writing, business-analysis, image-gen, video-gen]
+    notes: "Human-preference ELO. Check category tabs, not just overall."
+  - name: "Artificial Analysis"
+    url: "https://artificialanalysis.ai/"
+    covers: [coding, writing, business-analysis, agents-automation]
+    notes: "Independent benchmarks + price/speed — best source for the operator's cost note."
+  - name: "OpenRouter rankings"
+    url: "https://openrouter.ai/rankings"
+    covers: [coding, agents-automation]
+    notes: "Revealed preference — actual paid token share, the least gameable signal."
+  - name: "Vals AI"
+    url: "https://www.vals.ai/"
+    covers: [business-analysis]
+    notes: "Domain evals (legal, finance) — closest thing to B2B-task rankings."
+  - name: "SWE-bench (verified variants only)"
+    url: "https://www.swebench.com/"
+    covers: [coding]
+    notes: "Use with caution — see the July 2026 SWE-Bench Pro audit. Cross-check."
+
+cadence: weekly
+output: "queue/inbox/{date}-model-rankings.md"
+max_models_per_category: 3

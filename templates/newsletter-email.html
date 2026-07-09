@@ -67,6 +67,13 @@
     </td>
   </tr>
 
+  <!-- ============ HERO IMAGE (AI-generated per issue; see guide for prompt recipe) ============ -->
+  <tr>
+    <td>
+      <img src="{{HERO_IMAGE_URL}}" width="600" alt="{{HERO_IMAGE_ALT}}" style="display:block; width:100%; max-width:600px; height:auto; border:0;">
+    </td>
+  </tr>
+
   <!-- ============ 1. THE TAKE OF THE WEEK ============ -->
   <tr>
     <td style="padding:32px 32px 8px 32px;" class="px">
@@ -142,7 +149,48 @@
     </td>
   </tr>
 
-  <!-- ============ 3. TRENDING ON GITHUB ============ -->
+  <!-- ============ 3. THE FLIGHT DECK — MODEL PICKS BY MISSION ============ -->
+  <tr>
+    <td style="padding:8px 32px 24px 32px;" class="px">
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:4px;">
+        The Flight Deck
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; padding-bottom:14px;">
+        Which model for which mission, as of {{RANKINGS_DATE}}. Rankings move fast — this is the current read, sourced and dated, not gospel.
+      </div>
+
+      <!-- BEGIN:MODEL_CATEGORY (repeat per category: Coding / Writing &amp; Comms / Business Analysis / Agents &amp; Automation) -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:14px; background-color:#eef2f9; border-radius:6px;">
+        <tr>
+          <td style="padding:16px 20px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; font-weight:800; color:#16233f; padding-bottom:8px;">
+              {{CATEGORY_ICON}} {{CATEGORY_NAME}}
+            </div>
+            <!-- BEGIN:MODEL_ROW (repeat 3x per category) -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:6px;">
+              <tr>
+                <td width="26" valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; font-weight:800; color:#b5851a;">{{MODEL_RANK}}.</td>
+                <td valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#2b3243; line-height:1.5;">
+                  <span style="font-weight:700; color:#16233f;">{{MODEL_NAME}}</span> — {{MODEL_ONE_LINER}}
+                </td>
+              </tr>
+            </table>
+            <!-- END:MODEL_ROW -->
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; color:#6a7285; font-style:italic; padding-top:6px;">
+              Operator's note: {{CATEGORY_OPERATOR_NOTE}}
+            </div>
+          </td>
+        </tr>
+      </table>
+      <!-- END:MODEL_CATEGORY -->
+
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; color:#6a7285;">
+        Sources: {{RANKINGS_SOURCES_LINKED}}
+      </div>
+    </td>
+  </tr>
+
+  <!-- ============ 4. TRENDING ON GITHUB ============ -->
   <tr>
     <td style="padding:8px 32px 24px 32px;" class="px">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#eef2f9; border-radius:6px;">
@@ -174,7 +222,67 @@
     </td>
   </tr>
 
-  <!-- ============ 4. ONE YOU CAN USE (value contract — never skip) ============ -->
+  <!-- ============ 5. GENERATIVE MEDIA WATCH (image/video/voice — rotating slot) ============ -->
+  <!-- BEGIN:OPTIONAL_MEDIA_WATCH -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#16233f; border-radius:6px;">
+        <tr>
+          <td style="padding:22px 24px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:10px;">
+              🎬 Generative Media Watch
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:17px; font-weight:700; color:#ffffff; padding-bottom:8px;">
+              {{MEDIA_HEADLINE}}
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#c6d2e6; line-height:1.6; padding-bottom:12px;">
+              {{MEDIA_WHAT_SHIPPED}}
+            </div>
+            <img src="{{MEDIA_IMAGE_URL}}" width="552" alt="{{MEDIA_IMAGE_ALT}}" style="display:block; width:100%; max-width:552px; height:auto; border:0; border-radius:4px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#9fb0cc; font-style:italic; line-height:1.5; padding-top:10px;">
+              The business read: {{MEDIA_BUSINESS_ANGLE}}
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; padding-top:8px;">
+              <a href="{{MEDIA_SOURCE_URL}}" style="color:#f0b429; text-decoration:underline;">See it →</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!-- END:OPTIONAL_MEDIA_WATCH -->
+
+  <!-- ============ 6. FEATURED WORKFLOW (rotating slot — from bookmarked builds) ============ -->
+  <!-- BEGIN:OPTIONAL_WORKFLOW -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:4px;">
+        Featured Workflow
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:17px; font-weight:700; color:#16233f; padding-bottom:8px;">
+        {{WORKFLOW_TITLE}}
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.6; padding-bottom:12px;">
+        {{WORKFLOW_WHAT_IT_DOES}} {{WORKFLOW_WHO_ITS_FOR}}
+      </div>
+      <!-- BEGIN:WORKFLOW_STEP (repeat 3-6x) -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:8px;">
+        <tr>
+          <td width="34" valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; font-weight:800; color:#f0b429;">{{STEP_NUMBER}} →</td>
+          <td valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.55;">
+            <span style="font-weight:700; color:#16233f;">{{STEP_TOOL}}:</span> {{STEP_ACTION}}
+          </td>
+        </tr>
+      </table>
+      <!-- END:WORKFLOW_STEP -->
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; font-style:italic; padding-top:4px;">
+        Time it saves: {{WORKFLOW_TIME_SAVED}} · Credit: <a href="{{WORKFLOW_SOURCE_URL}}" style="color:#1d5c8f; text-decoration:underline;">{{WORKFLOW_SOURCE_NAME}}</a>
+      </div>
+    </td>
+  </tr>
+  <!-- END:OPTIONAL_WORKFLOW -->
+
+  <!-- ============ 7. ONE YOU CAN USE (value contract — never skip) ============ -->
   <tr>
     <td style="padding:0 32px 24px 32px;" class="px">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:2px solid #f0b429; border-radius:6px;">
@@ -203,7 +311,71 @@
     </td>
   </tr>
 
-  <!-- ============ 5. SAAS IDEA WATCH (optional — delete whole block if none) ============ -->
+  <!-- ============ 8. PERSONA PROMPT OF THE WEEK (Personasmith download — see references/personasmith-metaprompt.md) ============ -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:2px solid #16233f; border-radius:6px;">
+        <tr>
+          <td style="padding:22px 24px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#16233f; padding-bottom:8px;">
+              🎁 Persona Prompt of the Week
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:17px; font-weight:700; color:#16233f; padding-bottom:6px;">
+              {{PERSONA_NAME}}
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.6; padding-bottom:6px;">
+              {{PERSONA_ESSENCE}}
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.6; padding-bottom:14px;">
+              What it sharpens: {{PERSONA_JUDGMENT_LINE}}
+            </div>
+            <!-- Bulletproof button -->
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="background-color:#f0b429; border-radius:5px;">
+                  <a href="{{PERSONA_DOWNLOAD_URL}}" style="display:inline-block; padding:12px 24px; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; font-weight:800; color:#16233f; text-decoration:none;">Download the persona (.txt) →</a>
+                </td>
+              </tr>
+            </table>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; line-height:1.6; padding-top:12px;">
+              Paste it into a system/instructions field (Custom GPT, Project, API system slot) — not a chat message. {{PERSONA_GOVERNANCE_TEASER}}
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ============ 9. DISRUPTION WATCH (jobs & functions AI is actually changing) ============ -->
+  <!-- BEGIN:OPTIONAL_DISRUPTION -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:4px;">
+        Disruption Watch
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; padding-bottom:14px;">
+        Where AI is actually changing headcount and workflows — receipts only, no vague futurism.
+      </div>
+      <!-- BEGIN:DISRUPTION_ITEM (repeat 2-3x) -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px; border-left:4px solid #16233f; background-color:#eef2f9;">
+        <tr>
+          <td style="padding:14px 18px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; font-weight:700; color:#16233f;">{{DISRUPTION_ROLE}}</div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#2b3243; line-height:1.55; padding-top:4px;">
+              {{DISRUPTION_EVIDENCE}} <a href="{{DISRUPTION_SOURCE_URL}}" style="color:#1d5c8f; text-decoration:underline;">[source]</a>
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; font-style:italic; line-height:1.5; padding-top:4px;">
+              If this is your org: {{DISRUPTION_OPERATOR_MOVE}}
+            </div>
+          </td>
+        </tr>
+      </table>
+      <!-- END:DISRUPTION_ITEM -->
+    </td>
+  </tr>
+  <!-- END:OPTIONAL_DISRUPTION -->
+
+  <!-- ============ 10. SAAS IDEA WATCH (optional — delete whole block if none) ============ -->
   <!-- BEGIN:OPTIONAL_SAAS_IDEA -->
   <tr>
     <td style="padding:0 32px 24px 32px;" class="px">
@@ -224,7 +396,32 @@
   </tr>
   <!-- END:OPTIONAL_SAAS_IDEA -->
 
-  <!-- ============ 6. BUILDING IN PUBLIC (optional — delete whole block if nothing real) ============ -->
+  <!-- ============ 11. SIGNAL SOURCES (rotating follow list — 3 per issue, never repeat within 8 issues) ============ -->
+  <!-- BEGIN:OPTIONAL_SIGNAL_SOURCES -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:4px;">
+        Signal Sources
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; padding-bottom:14px;">
+        Three accounts worth following this week — the feeds this briefing is actually built from.
+      </div>
+      <!-- BEGIN:SOURCE_ITEM (repeat 3x) -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
+        <tr>
+          <td valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; line-height:1.55;">
+            <a href="{{SOURCE_URL}}" style="font-weight:700; color:#16233f; text-decoration:underline;">{{SOURCE_HANDLE}}</a>
+            <span style="color:#6a7285; font-size:12px;">&nbsp;{{SOURCE_PLATFORM}}</span><br>
+            <span style="color:#2b3243; font-size:13px;">{{SOURCE_WHY_FOLLOW}}</span>
+          </td>
+        </tr>
+      </table>
+      <!-- END:SOURCE_ITEM -->
+    </td>
+  </tr>
+  <!-- END:OPTIONAL_SIGNAL_SOURCES -->
+
+  <!-- ============ 12. BUILDING IN PUBLIC (optional — delete whole block if nothing real) ============ -->
   <!-- BEGIN:OPTIONAL_BUILDING -->
   <tr>
     <td style="padding:0 32px 28px 32px;" class="px">
