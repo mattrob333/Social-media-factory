@@ -3,7 +3,7 @@
 # Tracks every source item that's been processed to prevent duplicates.
 
 last_ingest: "2026-07-09T06:00:00Z"  # ISO timestamp of this successful ingest run (Thu Jul 9 — OpenAI SWE-Bench audit, Karpathy Fable/Sol comparison, Sam Hogan 80% savings, Hermes Cloud launch, TencentDB-Agent-Memory trending)
-last_content_remix_tick: "2026-07-09T01:01:00Z"  # Wed Jul 8 8pm CT tick
+last_content_remix_tick: "2026-07-09T14:00:00Z"  # Thu Jul 9 8am CT tick
 
 youtube:
   # Format: channel_url: last_processed_video_id
@@ -105,3 +105,11 @@ stuck_drafts:
     path: "queue/drafts/2026-07-07-salesforce-agentforce-commerce-ga.md"
     reason: "FAIL after 2 passes — Pass 1: NO AI-ISMS + VOICE MATCH. Pass 2: PLATFORM FIT (780 chars, over limit, multiple ideas). Fix: cut to ~280 chars or split into mini-thread."
     confidence: 4
+  - slug: "hermes-cloud-deployment-modes"
+    path: "queue/drafts/2026-07-09-hermes-cloud-deployment-modes.md"
+    reason: "FAIL after 2 passes — Pass 2: ATTRIBUTION (no in-body credit to @Teknium despite building directly on his Hermes Cloud announcement). Fix: add @Teknium credit or quote-tweet framing in first sentence."
+    confidence: 4
+  - slug: "openclaw-foundation-independent"
+    path: "queue/drafts/2026-07-09-openclaw-foundation-independent.md"
+    reason: "FAIL after 2 passes — Pass 1: NO AI-ISMS + CONCRETE + VOICE MATCH. Pass 2: ATTRIBUTION (no in-body credit to @davemorin) + PLATFORM FIT (~700 chars, over X limit). Fix: add attribution clause and either trim to ~280 chars or split into a 2-3 post thread."
+    confidence: 5
