@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Tier 4 Intelligence — Issue {{ISSUE_NUMBER}}</title>
+<!--
+  ============================================================
+  TIER 4 INTELLIGENCE — HTML EMAIL NEWSLETTER TEMPLATE
+  ============================================================
+  For the Hermes newsletter loop. Population rules live in
+  templates/newsletter-email-guide.md — read it before filling.
+
+  Hard rules (from voice.md / templates/newsletter.md):
+  - Never name a specific aircraft type. "Flies a jet ~18 days a month."
+  - Every repo/tool/account named must be a real <a href> link.
+  - Human approval required before send. Never auto-send.
+
+  Email-client constraints honored here:
+  - 600px table layout, all styles inline (no CSS vars, no flexbox).
+  - System font stack for body, Georgia for the essay. No webfonts.
+  - Repeatable blocks are wrapped in comment markers:
+      <!-- BEGIN:BLOCKNAME --> ... <!-- END:BLOCKNAME - -> (no space)
+    Duplicate the block per item; delete unused optional blocks whole.
+  ============================================================
+-->
+<style>
+  /* Mobile-only tweaks; everything critical is inline. */
+  @media only screen and (max-width: 620px) {
+    .container { width: 100% !important; }
+    .px { padding-left: 20px !important; padding-right: 20px !important; }
+    .stack { display: block !important; width: 100% !important; }
+    h1 { font-size: 26px !important; }
+  }
+</style>
+</head>
+<body style="margin:0; padding:0; background-color:#e9ebf0; -webkit-text-size-adjust:100%;">
+
+<!-- Preheader: first line shown in inbox preview. 60-90 chars. -->
+<div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+  {{PREHEADER_TEXT}}
+</div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#e9ebf0;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px; background-color:#ffffff; border-radius:8px; overflow:hidden;">
+
+  <!-- ============ MASTHEAD ============ -->
+  <tr>
+    <td style="background-color:#16233f; padding:28px 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;">
+            <div style="color:#f0b429; font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase;">Tier 4</div>
+            <div style="color:#ffffff; font-size:28px; font-weight:800; letter-spacing:1px; line-height:1.1; margin-top:2px;">INTELLIGENCE</div>
+          </td>
+          <td align="right" valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; color:#9fb0cc; font-size:12px; line-height:1.6;">
+            Issue {{ISSUE_NUMBER}}<br>{{ISSUE_DATE}}
+          </td>
+        </tr>
+      </table>
+      <div style="border-top:1px solid #2c3c5e; margin-top:18px; padding-top:12px; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; color:#c6d2e6; font-size:13px; line-height:1.5;">
+        The operator's briefing on AI agents, automation, and governance — from someone who ships it, not tweets about it.
+      </div>
+    </td>
+  </tr>
+
+  <!-- ============ HERO IMAGE (AI-generated per issue; see guide for prompt recipe) ============ -->
+  <tr>
+    <td>
+      <img src="{{HERO_IMAGE_URL}}" width="600" alt="{{HERO_IMAGE_ALT}}" style="display:block; width:100%; max-width:600px; height:auto; border:0;">
+    </td>
+  </tr>
+
+  <!-- ============ 1. THE TAKE OF THE WEEK ============ -->
+  <tr>
+    <td style="padding:32px 32px 8px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:8px;">
+            ✈ The Take
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:Georgia,'Times New Roman',serif; font-size:24px; font-weight:bold; color:#16233f; line-height:1.25; padding-bottom:12px;">
+            {{TAKE_HEADLINE}}
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:Georgia,'Times New Roman',serif; font-size:16px; color:#2b3243; line-height:1.65;">
+            <!-- 200-400 words. Split into <p> tags with this exact style. -->
+            <p style="margin:0 0 14px 0;">{{TAKE_PARAGRAPH_1}}</p>
+            <p style="margin:0 0 14px 0;">{{TAKE_PARAGRAPH_2}}</p>
+            <p style="margin:0 0 14px 0;">{{TAKE_PARAGRAPH_N}}</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ============ PULL QUOTE (navy band, from The Take) ============ -->
+  <tr>
+    <td style="padding:16px 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#16233f; border-radius:6px;">
+        <tr>
+          <td style="padding:24px 28px;">
+            <div style="font-family:Georgia,serif; color:#f0b429; font-size:40px; line-height:0.5; padding-bottom:14px;">&ldquo;</div>
+            <div style="font-family:Georgia,'Times New Roman',serif; color:#ffffff; font-size:19px; font-style:italic; line-height:1.5;">
+              {{PULL_QUOTE}}
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ============ 2. ON THE RADAR ============ -->
+  <tr>
+    <td style="padding:8px 32px 8px 32px;" class="px">
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:4px;">
+        On the Radar
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; padding-bottom:16px;">
+        3–5 things worth your attention this week, each with the take.
+      </div>
+
+      <!-- BEGIN:RADAR_ITEM (repeat 3-5x, increment the number) -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:18px;">
+        <tr>
+          <td width="44" valign="top">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr><td align="center" style="width:32px; height:32px; background-color:#f0b429; border-radius:16px; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; font-weight:800; color:#16233f;">{{RADAR_NUMBER}}</td></tr>
+            </table>
+          </td>
+          <td valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;">
+            <div style="font-size:16px; font-weight:700; color:#16233f; line-height:1.4;">{{RADAR_TITLE}}</div>
+            <div style="font-size:14px; color:#2b3243; line-height:1.55; padding-top:4px;">{{RADAR_SUMMARY}}</div>
+            <div style="font-size:14px; color:#6a7285; font-style:italic; line-height:1.5; padding-top:6px;">The take: {{RADAR_TAKE}}</div>
+            <div style="font-size:13px; padding-top:6px;">
+              <a href="{{RADAR_SOURCE_URL}}" style="color:#1d5c8f; text-decoration:underline;">via {{RADAR_SOURCE_NAME}}</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <!-- END:RADAR_ITEM -->
+
+    </td>
+  </tr>
+
+  <!-- ============ 3. THE FLIGHT DECK — MODEL PICKS BY MISSION ============ -->
+  <tr>
+    <td style="padding:8px 32px 24px 32px;" class="px">
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:4px;">
+        The Flight Deck
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; padding-bottom:14px;">
+        Which model for which mission, as of {{RANKINGS_DATE}}. Rankings move fast — this is the current read, sourced and dated, not gospel.
+      </div>
+
+      <!-- BEGIN:MODEL_CATEGORY (repeat per category: Coding / Writing &amp; Comms / Business Analysis / Agents &amp; Automation) -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:14px; background-color:#eef2f9; border-radius:6px;">
+        <tr>
+          <td style="padding:16px 20px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; font-weight:800; color:#16233f; padding-bottom:8px;">
+              {{CATEGORY_ICON}} {{CATEGORY_NAME}}
+            </div>
+            <!-- BEGIN:MODEL_ROW (repeat 3x per category) -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:6px;">
+              <tr>
+                <td width="26" valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; font-weight:800; color:#b5851a;">{{MODEL_RANK}}.</td>
+                <td valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#2b3243; line-height:1.5;">
+                  <span style="font-weight:700; color:#16233f;">{{MODEL_NAME}}</span> — {{MODEL_ONE_LINER}}
+                </td>
+              </tr>
+            </table>
+            <!-- END:MODEL_ROW -->
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; color:#6a7285; font-style:italic; padding-top:6px;">
+              Operator's note: {{CATEGORY_OPERATOR_NOTE}}
+            </div>
+          </td>
+        </tr>
+      </table>
+      <!-- END:MODEL_CATEGORY -->
+
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; color:#6a7285;">
+        Sources: {{RANKINGS_SOURCES_LINKED}}
+      </div>
+    </td>
+  </tr>
+
+  <!-- ============ 4. TRENDING ON GITHUB ============ -->
+  <tr>
+    <td style="padding:8px 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#eef2f9; border-radius:6px;">
+        <tr>
+          <td style="padding:22px 24px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#16233f; padding-bottom:12px;">
+              ⭐ Trending on GitHub
+            </div>
+
+            <!-- BEGIN:REPO_ITEM (repeat 3-4x) -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;">
+              <tr>
+                <td style="font-family:'Courier New',Courier,monospace; font-size:14px; font-weight:bold;">
+                  <a href="{{REPO_URL}}" style="color:#16233f; text-decoration:underline;">{{REPO_OWNER}}/{{REPO_NAME}}</a>
+                  <span style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-weight:400; color:#6a7285; font-size:12px;">&nbsp;{{REPO_STARS}} ★</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#2b3243; line-height:1.5; padding-top:2px;">
+                  {{REPO_ONE_LINER}} <span style="color:#6a7285; font-style:italic;">{{REPO_WHY_IT_MATTERS}}</span>
+                </td>
+              </tr>
+            </table>
+            <!-- END:REPO_ITEM -->
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ============ 5. GENERATIVE MEDIA WATCH (image/video/voice — rotating slot) ============ -->
+  <!-- BEGIN:OPTIONAL_MEDIA_WATCH -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#16233f; border-radius:6px;">
+        <tr>
+          <td style="padding:22px 24px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:10px;">
+              🎬 Generative Media Watch
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:17px; font-weight:700; color:#ffffff; padding-bottom:8px;">
+              {{MEDIA_HEADLINE}}
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#c6d2e6; line-height:1.6; padding-bottom:12px;">
+              {{MEDIA_WHAT_SHIPPED}}
+            </div>
+            <img src="{{MEDIA_IMAGE_URL}}" width="552" alt="{{MEDIA_IMAGE_ALT}}" style="display:block; width:100%; max-width:552px; height:auto; border:0; border-radius:4px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#9fb0cc; font-style:italic; line-height:1.5; padding-top:10px;">
+              The business read: {{MEDIA_BUSINESS_ANGLE}}
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; padding-top:8px;">
+              <a href="{{MEDIA_SOURCE_URL}}" style="color:#f0b429; text-decoration:underline;">See it →</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!-- END:OPTIONAL_MEDIA_WATCH -->
+
+  <!-- ============ 6. FEATURED WORKFLOW (rotating slot — from bookmarked builds) ============ -->
+  <!-- BEGIN:OPTIONAL_WORKFLOW -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:4px;">
+        Featured Workflow
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:17px; font-weight:700; color:#16233f; padding-bottom:8px;">
+        {{WORKFLOW_TITLE}}
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.6; padding-bottom:12px;">
+        {{WORKFLOW_WHAT_IT_DOES}} {{WORKFLOW_WHO_ITS_FOR}}
+      </div>
+      <!-- BEGIN:WORKFLOW_STEP (repeat 3-6x) -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:8px;">
+        <tr>
+          <td width="34" valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; font-weight:800; color:#f0b429;">{{STEP_NUMBER}} →</td>
+          <td valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.55;">
+            <span style="font-weight:700; color:#16233f;">{{STEP_TOOL}}:</span> {{STEP_ACTION}}
+          </td>
+        </tr>
+      </table>
+      <!-- END:WORKFLOW_STEP -->
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; font-style:italic; padding-top:4px;">
+        Time it saves: {{WORKFLOW_TIME_SAVED}} · Credit: <a href="{{WORKFLOW_SOURCE_URL}}" style="color:#1d5c8f; text-decoration:underline;">{{WORKFLOW_SOURCE_NAME}}</a>
+      </div>
+    </td>
+  </tr>
+  <!-- END:OPTIONAL_WORKFLOW -->
+
+  <!-- ============ 7. ONE YOU CAN USE (value contract — never skip) ============ -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:2px solid #f0b429; border-radius:6px;">
+        <tr>
+          <td style="padding:22px 24px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#b5851a; padding-bottom:8px;">
+              🛠 One You Can Use
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:17px; font-weight:700; color:#16233f; padding-bottom:8px;">
+              {{USE_TITLE}}
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.6; padding-bottom:14px;">
+              {{USE_SETUP_CONTEXT}}
+            </div>
+            <!-- The actual prompt / steps. Keep monospace. -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#16233f; border-radius:4px;">
+              <tr>
+                <td style="padding:16px 18px; font-family:'Courier New',Courier,monospace; font-size:13px; color:#dce6f5; line-height:1.6;">
+                  {{USE_PROMPT_OR_STEPS}}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ============ 8. PERSONA PROMPT OF THE WEEK (Personasmith download — see references/personasmith-metaprompt.md) ============ -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:2px solid #16233f; border-radius:6px;">
+        <tr>
+          <td style="padding:22px 24px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#16233f; padding-bottom:8px;">
+              🎁 Persona Prompt of the Week
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:17px; font-weight:700; color:#16233f; padding-bottom:6px;">
+              {{PERSONA_NAME}}
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.6; padding-bottom:6px;">
+              {{PERSONA_ESSENCE}}
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.6; padding-bottom:14px;">
+              What it sharpens: {{PERSONA_JUDGMENT_LINE}}
+            </div>
+            <!-- Bulletproof button -->
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="background-color:#f0b429; border-radius:5px;">
+                  <a href="{{PERSONA_DOWNLOAD_URL}}" style="display:inline-block; padding:12px 24px; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; font-weight:800; color:#16233f; text-decoration:none;">Download the persona (.txt) →</a>
+                </td>
+              </tr>
+            </table>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; line-height:1.6; padding-top:12px;">
+              Paste it into a system/instructions field (Custom GPT, Project, API system slot) — not a chat message. {{PERSONA_GOVERNANCE_TEASER}}
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ============ 9. DISRUPTION WATCH (jobs & functions AI is actually changing) ============ -->
+  <!-- BEGIN:OPTIONAL_DISRUPTION -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:4px;">
+        Disruption Watch
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; padding-bottom:14px;">
+        Where AI is actually changing headcount and workflows — receipts only, no vague futurism.
+      </div>
+      <!-- BEGIN:DISRUPTION_ITEM (repeat 2-3x) -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px; border-left:4px solid #16233f; background-color:#eef2f9;">
+        <tr>
+          <td style="padding:14px 18px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; font-weight:700; color:#16233f;">{{DISRUPTION_ROLE}}</div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#2b3243; line-height:1.55; padding-top:4px;">
+              {{DISRUPTION_EVIDENCE}} <a href="{{DISRUPTION_SOURCE_URL}}" style="color:#1d5c8f; text-decoration:underline;">[source]</a>
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; font-style:italic; line-height:1.5; padding-top:4px;">
+              If this is your org: {{DISRUPTION_OPERATOR_MOVE}}
+            </div>
+          </td>
+        </tr>
+      </table>
+      <!-- END:DISRUPTION_ITEM -->
+    </td>
+  </tr>
+  <!-- END:OPTIONAL_DISRUPTION -->
+
+  <!-- ============ 10. SAAS IDEA WATCH (optional — delete whole block if none) ============ -->
+  <!-- BEGIN:OPTIONAL_SAAS_IDEA -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-left:4px solid #f0b429; background-color:#fbf7ec;">
+        <tr>
+          <td style="padding:18px 22px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#b5851a; padding-bottom:6px;">
+              💡 Idea Watch
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:16px; font-weight:700; color:#16233f;">{{IDEA_NAME}}</div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.6; padding-top:6px;">
+              {{IDEA_DESCRIPTION}} <span style="color:#6a7285; font-style:italic;">{{IDEA_WHY_NOW}}</span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!-- END:OPTIONAL_SAAS_IDEA -->
+
+  <!-- ============ 11. SIGNAL SOURCES (rotating follow list — 3 per issue, never repeat within 8 issues) ============ -->
+  <!-- BEGIN:OPTIONAL_SIGNAL_SOURCES -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:4px;">
+        Signal Sources
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; padding-bottom:14px;">
+        Three accounts worth following this week — the feeds this briefing is actually built from.
+      </div>
+      <!-- BEGIN:SOURCE_ITEM (repeat 3x) -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
+        <tr>
+          <td valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; line-height:1.55;">
+            <a href="{{SOURCE_URL}}" style="font-weight:700; color:#16233f; text-decoration:underline;">{{SOURCE_HANDLE}}</a>
+            <span style="color:#6a7285; font-size:12px;">&nbsp;{{SOURCE_PLATFORM}}</span><br>
+            <span style="color:#2b3243; font-size:13px;">{{SOURCE_WHY_FOLLOW}}</span>
+          </td>
+        </tr>
+      </table>
+      <!-- END:SOURCE_ITEM -->
+    </td>
+  </tr>
+  <!-- END:OPTIONAL_SIGNAL_SOURCES -->
+
+  <!-- ============ 12. BUILDING IN PUBLIC (optional — delete whole block if nothing real) ============ -->
+  <!-- BEGIN:OPTIONAL_BUILDING -->
+  <tr>
+    <td style="padding:0 32px 28px 32px;" class="px">
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:8px;">
+        Building in Public
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.6;">
+        {{BUILDING_UPDATE}}
+      </div>
+    </td>
+  </tr>
+  <!-- END:OPTIONAL_BUILDING -->
+
+  <!-- ============ SIGN-OFF ============ -->
+  <tr>
+    <td style="padding:0 32px 32px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #dde2ec;">
+        <tr>
+          <td style="padding-top:20px; font-family:Georgia,'Times New Roman',serif; font-size:15px; color:#2b3243; line-height:1.6;">
+            {{SIGNOFF_LINE}}<br><br>
+            — Matt<br>
+            <span style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285;">Flies a jet ~18 days a month. Builds AI agents the rest.</span>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ============ FOOTER ============ -->
+  <tr>
+    <td style="background-color:#16233f; padding:26px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td align="center" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#9fb0cc; line-height:1.7;">
+            <span style="color:#f0b429; font-weight:700; letter-spacing:2px; font-size:12px;">TIER 4 INTELLIGENCE</span><br>
+            Forwarded this? <a href="{{SUBSCRIBE_URL}}" style="color:#f0b429; text-decoration:underline;">Subscribe here.</a><br><br>
+            <a href="{{X_PROFILE_URL}}" style="color:#c6d2e6; text-decoration:underline;">X</a>
+            &nbsp;&middot;&nbsp;
+            <a href="{{LINKEDIN_PROFILE_URL}}" style="color:#c6d2e6; text-decoration:underline;">LinkedIn</a>
+            &nbsp;&middot;&nbsp;
+            <a href="{{WEBSITE_URL}}" style="color:#c6d2e6; text-decoration:underline;">Website</a><br><br>
+            <span style="font-size:12px; color:#6d7d9c;">
+              <a href="{{UNSUBSCRIBE_URL}}" style="color:#6d7d9c; text-decoration:underline;">Unsubscribe</a>
+              &nbsp;&middot;&nbsp;
+              <a href="{{PREFERENCES_URL}}" style="color:#6d7d9c; text-decoration:underline;">Preferences</a><br>
+              {{MAILING_ADDRESS}}
+            </span>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+</table>
+
+</td></tr>
+</table>
+</body>
+</html>
