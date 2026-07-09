@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Tier 4 Intelligence — Issue 3</title>
+<!--
+  ============================================================
+  TIER 4 INTELLIGENCE — HTML EMAIL NEWSLETTER TEMPLATE
+  ============================================================
+  For the Hermes newsletter loop. Population rules live in
+  templates/newsletter-email-guide.md — read it before filling.
+
+  Hard rules (from voice.md / templates/newsletter.md):
+  - Never name a specific aircraft type. "Flies a jet ~18 days a month."
+  - Every repo/tool/account named must be a real <a href> link.
+  - Human approval required before send. Never auto-send.
+
+  Email-client constraints honored here:
+  - 600px table layout, all styles inline (no CSS vars, no flexbox).
+  - System font stack for body, Georgia for the essay. No webfonts.
+  - Repeatable blocks are wrapped in comment markers:
+      <!-- BEGIN:BLOCKNAME --> ... <!-- END:BLOCKNAME - -> (no space)
+    Duplicate the block per item; delete unused optional blocks whole.
+  ============================================================
+-->
+<style>
+  /* Mobile-only tweaks; everything critical is inline. */
+  @media only screen and (max-width: 620px) {
+    .container { width: 100% !important; }
+    .px { padding-left: 20px !important; padding-right: 20px !important; }
+    .stack { display: block !important; width: 100% !important; }
+    h1 { font-size: 26px !important; }
+  }
+</style>
+</head>
+<body style="margin:0; padding:0; background-color:#e9ebf0; -webkit-text-size-adjust:100%;">
+
+<!-- Preheader: first line shown in inbox preview. 60-90 chars. -->
+<div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+  Benchmark rot is real: OpenAI just retracted its own eval. Plus a 40-agent org chart for $500/mo.
+</div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#e9ebf0;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px; background-color:#ffffff; border-radius:8px; overflow:hidden;">
+
+  <!-- ============ MASTHEAD ============ -->
+  <tr>
+    <td style="background-color:#16233f; padding:28px 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;">
+            <div style="color:#f0b429; font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase;">Tier 4</div>
+            <div style="color:#ffffff; font-size:28px; font-weight:800; letter-spacing:1px; line-height:1.1; margin-top:2px;">INTELLIGENCE</div>
+          </td>
+          <td align="right" valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; color:#9fb0cc; font-size:12px; line-height:1.6;">
+            Issue 3<br>July 9, 2026
+          </td>
+        </tr>
+      </table>
+      <div style="border-top:1px solid #2c3c5e; margin-top:18px; padding-top:12px; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; color:#c6d2e6; font-size:13px; line-height:1.5;">
+        The operator's briefing on AI agents, automation, and governance — from someone who ships it, not tweets about it.
+      </div>
+    </td>
+  </tr>
+
+  <!-- ============ 1. THE TAKE OF THE WEEK ============ -->
+  <tr>
+    <td style="padding:32px 32px 8px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:8px;">
+            ✈ The Take
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:Georgia,'Times New Roman',serif; font-size:24px; font-weight:bold; color:#16233f; line-height:1.25; padding-bottom:12px;">
+            Public Benchmarks Were Always PR Tools
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family:Georgia,'Times New Roman',serif; font-size:16px; color:#2b3243; line-height:1.65;">
+            <!-- 200-400 words. Split into <p> tags with this exact style. -->
+            <p style="margin:0 0 14px 0;">OpenAI audited SWE-Bench Pro this week and found 30% of the tasks broken — then retracted their own recommendation of it. That's not a scandal. That's the system working the way it was always going to work.</p>
+            <p style="margin:0 0 14px 0;">Public benchmarks are marketing surfaces. The moment a number becomes the thing labs compete on, it stops measuring what you care about. Aviation figured this out decades ago: you don't certify an aircraft on the manufacturer's brochure numbers, you certify it on your own flight test cards, flown by your own pilots, in your own conditions.</p>
+            <p style="margin:0 0 14px 0;">The move for operators: build private evals on your actual workflows. Twenty real tasks from your own pipeline beat ten thousand synthetic ones you didn't write. If your model selection process starts and ends with a leaderboard, you're choosing an aircraft off the in-flight magazine.</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ============ PULL QUOTE (navy band, from The Take) ============ -->
+  <tr>
+    <td style="padding:16px 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#16233f; border-radius:6px;">
+        <tr>
+          <td style="padding:24px 28px;">
+            <div style="font-family:Georgia,serif; color:#f0b429; font-size:40px; line-height:0.5; padding-bottom:14px;">&ldquo;</div>
+            <div style="font-family:Georgia,'Times New Roman',serif; color:#ffffff; font-size:19px; font-style:italic; line-height:1.5;">
+              Twenty real tasks from your own pipeline beat ten thousand synthetic ones you didn't write.
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ============ 2. ON THE RADAR ============ -->
+  <tr>
+    <td style="padding:8px 32px 8px 32px;" class="px">
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:4px;">
+        On the Radar
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285; padding-bottom:16px;">
+        3–5 things worth your attention this week, each with the take.
+      </div>
+
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:18px;">
+        <tr>
+          <td width="44" valign="top">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr><td align="center" style="width:32px; height:32px; background-color:#f0b429; border-radius:16px; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; font-weight:800; color:#16233f;">1</td></tr>
+            </table>
+          </td>
+          <td valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;">
+            <div style="font-size:16px; font-weight:700; color:#16233f; line-height:1.4;">Karpathy on the &ldquo;wise owl vs rottweiler&rdquo; framing</div>
+            <div style="font-size:14px; color:#2b3243; line-height:1.55; padding-top:4px;">Karpathy engaged Peter Gostev’s comparison of Fable 5 (&ldquo;wise owl&rdquo;) vs GPT-5.6 Sol (&ldquo;rottweiler&rdquo;), floating a &ldquo;swear meter&rdquo; as an eval signal.</div>
+            <div style="font-size:14px; color:#6a7285; font-style:italic; line-height:1.5; padding-top:6px;">The take: The framing is good. The missing layer: which one flies your airplane? Neither alone — you want both, with a checklist governing which handles what.</div>
+            <div style="font-size:13px; padding-top:6px;">
+              <a href="https://x.com/karpathy" style="color:#1d5c8f; text-decoration:underline;">via @karpathy</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:18px;">
+        <tr>
+          <td width="44" valign="top">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr><td align="center" style="width:32px; height:32px; background-color:#f0b429; border-radius:16px; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; font-weight:800; color:#16233f;">2</td></tr>
+            </table>
+          </td>
+          <td valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;">
+            <div style="font-size:16px; font-weight:700; color:#16233f; line-height:1.4;">80% cost savings moving to open source</div>
+            <div style="font-size:14px; color:#2b3243; line-height:1.55; padding-top:4px;">Sam Hogan helped a customer cut LLM spend from $60k/mo to $12k/mo by moving off frontier labs.</div>
+            <div style="font-size:14px; color:#6a7285; font-style:italic; line-height:1.5; padding-top:6px;">The take: Model commoditization in the wild. The question isn’t whether it happens — it’s how fast, and whether your harness is portable enough to catch it.</div>
+            <div style="font-size:13px; padding-top:6px;">
+              <a href="https://x.com/samhogan" style="color:#1d5c8f; text-decoration:underline;">via @samhogan</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:18px;">
+        <tr>
+          <td width="44" valign="top">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr><td align="center" style="width:32px; height:32px; background-color:#f0b429; border-radius:16px; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; font-weight:800; color:#16233f;">3</td></tr>
+            </table>
+          </td>
+          <td valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;">
+            <div style="font-size:16px; font-weight:700; color:#16233f; line-height:1.4;">Hermes Agent Cloud: 60-second agent deploys</div>
+            <div style="font-size:14px; color:#2b3243; line-height:1.55; padding-top:4px;">Nous launched two-click agent deployment with per-user access controls and unified billing.</div>
+            <div style="font-size:14px; color:#6a7285; font-style:italic; line-height:1.5; padding-top:6px;">The take: The &ldquo;agent per employee&rdquo; argument just got real. This is the org-chart equivalent of adding a user to Slack — governance had better keep up.</div>
+            <div style="font-size:13px; padding-top:6px;">
+              <a href="https://x.com/NousResearch" style="color:#1d5c8f; text-decoration:underline;">via @NousResearch</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:18px;">
+        <tr>
+          <td width="44" valign="top">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr><td align="center" style="width:32px; height:32px; background-color:#f0b429; border-radius:16px; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; font-weight:800; color:#16233f;">4</td></tr>
+            </table>
+          </td>
+          <td valign="top" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;">
+            <div style="font-size:16px; font-weight:700; color:#16233f; line-height:1.4;">40 AI marketing agents. One human. $500/month.</div>
+            <div style="font-size:14px; color:#2b3243; line-height:1.55; padding-top:4px;">Jacob Bank’s Davos clip put a number on the one-person AI org.</div>
+            <div style="font-size:14px; color:#6a7285; font-style:italic; line-height:1.5; padding-top:6px;">The take: $500/mo is the headline. The real question is who governs 40 non-human identities: owners, permissions, audit. That’s where this breaks without a system.</div>
+            <div style="font-size:13px; padding-top:6px;">
+              <a href="https://x.com/Zephyr_hg" style="color:#1d5c8f; text-decoration:underline;">via @Zephyr_hg</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+
+  <!-- ============ 3. TRENDING ON GITHUB ============ -->
+  <tr>
+    <td style="padding:8px 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#eef2f9; border-radius:6px;">
+        <tr>
+          <td style="padding:22px 24px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#16233f; padding-bottom:12px;">
+              ⭐ Trending on GitHub
+            </div>
+
+                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;">
+              <tr>
+                <td style="font-family:'Courier New',Courier,monospace; font-size:14px; font-weight:bold;">
+                  <a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" style="color:#16233f; text-decoration:underline;">TencentCloud/TencentDB-Agent-Memory</a>
+                  <span style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-weight:400; color:#6a7285; font-size:12px;">&nbsp;7,927 ★</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#2b3243; line-height:1.5; padding-top:2px;">
+                  Fully local long-term agent memory, zero external API dependencies. <span style="color:#6a7285; font-style:italic;">Agent memory is the governance bottleneck nobody’s solved. Local-only maps to &ldquo;you control your data.&rdquo;</span>
+                </td>
+              </tr>
+            </table>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;">
+              <tr>
+                <td style="font-family:'Courier New',Courier,monospace; font-size:14px; font-weight:bold;">
+                  <a href="https://github.com/MadsLorentzen/ai-job-search" style="color:#16233f; text-decoration:underline;">MadsLorentzen/ai-job-search</a>
+                  <span style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-weight:400; color:#6a7285; font-size:12px;">&nbsp;5,079 ★</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#2b3243; line-height:1.5; padding-top:2px;">
+                  Job-search automation agent, doubling stars this week. <span style="color:#6a7285; font-style:italic;">The pattern to study: a boring, painful workflow fully agent-ified.</span>
+                </td>
+              </tr>
+            </table>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;">
+              <tr>
+                <td style="font-family:'Courier New',Courier,monospace; font-size:14px; font-weight:bold;">
+                  <a href="https://github.com/obra/superpowers" style="color:#16233f; text-decoration:underline;">obra/superpowers</a>
+                  <span style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-weight:400; color:#6a7285; font-size:12px;">&nbsp;1,116 ★</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#2b3243; line-height:1.5; padding-top:2px;">
+                  Skills-as-files framework for Claude agents. <span style="color:#6a7285; font-style:italic;">Skills beat fine-tuning for most teams. This is the harness thesis, shipped.</span>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ============ 4. ONE YOU CAN USE (value contract — never skip) ============ -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:2px solid #f0b429; border-radius:6px;">
+        <tr>
+          <td style="padding:22px 24px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#b5851a; padding-bottom:8px;">
+              🛠 One You Can Use
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:17px; font-weight:700; color:#16233f; padding-bottom:8px;">
+              The 20-Task Private Eval
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.6; padding-bottom:14px;">
+              Before you switch models (or believe a launch thread), run this against your own work. One afternoon, reusable forever.
+            </div>
+            <!-- The actual prompt / steps. Keep monospace. -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#16233f; border-radius:4px;">
+              <tr>
+                <td style="padding:16px 18px; font-family:'Courier New',Courier,monospace; font-size:13px; color:#dce6f5; line-height:1.6;">
+                  1. Pull the last 20 real tasks your team gave an AI (tickets, drafts, extractions).<br>2. For each, write the input + a 1-line 'what good looks like'.<br>3. Run all 20 through your current model and the candidate.<br>4. Blind-grade A/B — no model names visible.<br>5. Switch only on a clear win (&ge;70% preferred). Ties go to the incumbent.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ============ 5. SAAS IDEA WATCH (optional — delete whole block if none) ============ -->
+  <!-- BEGIN:OPTIONAL_SAAS_IDEA -->
+  <tr>
+    <td style="padding:0 32px 24px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-left:4px solid #f0b429; background-color:#fbf7ec;">
+        <tr>
+          <td style="padding:18px 22px;">
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#b5851a; padding-bottom:6px;">
+              💡 Idea Watch
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:16px; font-weight:700; color:#16233f;">Pedigree Herd — the governed agent multiplexer</div>
+            <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.6; padding-top:6px;">
+              One pane for identity, permissions, and audit across every agent your org runs. <span style="color:#6a7285; font-style:italic;">With 60-second agent deploys now real, the 40-agent org chart arrives before the governance does. That gap is the product.</span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!-- END:OPTIONAL_SAAS_IDEA -->
+
+  <!-- ============ 6. BUILDING IN PUBLIC (optional — delete whole block if nothing real) ============ -->
+  <!-- BEGIN:OPTIONAL_BUILDING -->
+  <tr>
+    <td style="padding:0 32px 28px 32px;" class="px">
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f0b429; padding-bottom:8px;">
+        Building in Public
+      </div>
+      <div style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; color:#2b3243; line-height:1.6;">
+        The content factory now grades its own drafts against an anti-slop checklist before anything reaches my phone for approval. Rejection rate is humbling.
+      </div>
+    </td>
+  </tr>
+  <!-- END:OPTIONAL_BUILDING -->
+
+  <!-- ============ SIGN-OFF ============ -->
+  <tr>
+    <td style="padding:0 32px 32px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #dde2ec;">
+        <tr>
+          <td style="padding-top:20px; font-family:Georgia,'Times New Roman',serif; font-size:15px; color:#2b3243; line-height:1.6;">
+            Checklists beat genius. See you Friday.<br><br>
+            — Matt<br>
+            <span style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#6a7285;">Flies a jet ~18 days a month. Builds AI agents the rest.</span>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ============ FOOTER ============ -->
+  <tr>
+    <td style="background-color:#16233f; padding:26px 32px;" class="px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td align="center" style="font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; color:#9fb0cc; line-height:1.7;">
+            <span style="color:#f0b429; font-weight:700; letter-spacing:2px; font-size:12px;">TIER 4 INTELLIGENCE</span><br>
+            Forwarded this? <a href="https://example.com/subscribe" style="color:#f0b429; text-decoration:underline;">Subscribe here.</a><br><br>
+            <a href="https://x.com/mattrob333" style="color:#c6d2e6; text-decoration:underline;">X</a>
+            &nbsp;&middot;&nbsp;
+            <a href="https://www.linkedin.com/" style="color:#c6d2e6; text-decoration:underline;">LinkedIn</a>
+            &nbsp;&middot;&nbsp;
+            <a href="https://example.com" style="color:#c6d2e6; text-decoration:underline;">Website</a><br><br>
+            <span style="font-size:12px; color:#6d7d9c;">
+              <a href="#unsubscribe" style="color:#6d7d9c; text-decoration:underline;">Unsubscribe</a>
+              &nbsp;&middot;&nbsp;
+              <a href="#preferences" style="color:#6d7d9c; text-decoration:underline;">Preferences</a><br>
+              Tier 4 Intelligence · United States
+            </span>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+</table>
+
+</td></tr>
+</table>
+</body>
+</html>
