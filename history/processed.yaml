@@ -4,7 +4,7 @@
 
 last_ingest: "2026-07-13T12:00:00Z"  # ISO timestamp of this successful ingest run (Mon Jul 13 — Sam Altman "build cool things with 5.6 Sol" challenge, Zephyr Karpathy wiki method + Claude Code "glorified QA" founder quote, dax gangprompt workflow, steipete building OpenClaw multi-session, GitHub trending: destructive_command_guard + Nutlope hallmark + background-agents)
 
-last_content_remix_tick: "2026-07-13T15:00:00Z"  # Mon Jul 13 3pm CT tick — graded outstanding Jenny Wen/Cursor timely item (SLA), no new drafting (day's X + LinkedIn budget already exhausted by the 09:14 tick)
+last_content_remix_tick: "2026-07-14T01:00:00Z"  # Tue Jul 14 tick (~1am UTC / 12am CT Mon night) — no leftover uncommitted work found (previous tick had already committed). Processed 4 stale queue/timely/ items: 3 graded to PASS and moved to queue/graded/ (ai-agent-act-warner PASS-1, delaware-aic PASS-1, openai-build-week PASS-2 after CONCRETE rewrite), 1 (musk-apple-openai-lawsuit) already at max_passes=2 from a prior tick's FAIL — relocated to queue/drafts/ with its existing failure comment intact, flagged (needs structural split into a thread, not a single-post rewrite; do not burn a 3rd grading pass). No new scored-queue drafting this tick — Monday's (Jul 13 CT) X-singles budget (2/day) was already exceeded by 4 items graded during the day's earlier ticks (jenny-wen, google-microsoft, claude-code-glorified-qa, plus these 3 timely items), and LinkedIn's 1/day was used by trending-repos-linkedin. All 3 new PASS items carry budget_note frontmatter flagging Matt to pick which post today vs. roll forward.
 
 youtube:
   # Format: channel_url: last_processed_video_id
@@ -103,6 +103,10 @@ skipped: []
 
 # Stuck drafts flagged to Matt (queue/drafts/) — same 5 from Jul 7-9
 stuck_drafts:
+  - slug: "musk-apple-openai-lawsuit-distraction"
+    path: "queue/drafts/2026-07-13-musk-apple-openai-lawsuit-distraction.md"
+    reason: "FAIL after 2 passes (relocated from queue/timely/ this tick, Jul 14 — hit max_passes in an earlier tick and was left stranded in the timely queue instead of being moved to drafts/). Pass 1 FAIL: CONCRETE + SOURCE VERIFIED (protocol-alliance claim unsupported by the DW verified_source). Pass 2 FAIL: PLATFORM FIT — three ideas stacked into one X single (lawsuit feud, protocol alliance, governance thesis). Fix: split into a 3-post thread (Post 1: contrarian claim, Post 2: protocol-alliance evidence w/ The Information attribution, Post 3: governance landing line) — do not attempt a 3rd single-post rewrite."
+    confidence: 4
   - slug: "gemini-managed-agents-v2"
     path: "queue/drafts/2026-07-07-gemini-managed-agents.md"
     reason: "FAIL after 2 passes — Pass 1: CONCRETE (vague). Pass 2: ATTRIBUTION (fails to credit @OfficialLoganK in post body). Fix: one-clause add of credit line in opening sentence."

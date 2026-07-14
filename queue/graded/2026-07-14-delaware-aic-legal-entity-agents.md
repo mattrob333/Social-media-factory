@@ -6,6 +6,8 @@ theme: news-jack
 mode: amplify-apply
 source: "https://x.com/natiakourdadze (general AI news awareness)"
 verified_source: "https://fortune.com/2026/07/13/exclusive-delaware-ai-agents-legal-entity-proposal-llc-pbc/"
+graded: "PASS (pass 1) — deepseek/deepseek-v4-flash, all 7 criteria PASS"
+budget_note: "Same-day X-singles budget already exceeded (see ai-agent-act-warner item note). Flag to Matt for cross-day scheduling decision, not auto-post."
 ---
 
 Delaware just proposed the AIC — a legal entity whose day-to-day is managed by an AI agent, not a person. It can sue, be sued, hold property, and incur obligations. It has a single member responsible for capital. It keeps a log.
