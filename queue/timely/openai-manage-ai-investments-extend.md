@@ -1,1 +1,0 @@
---- (deleted, superseded by nous-research-hermes-funding-75m.md)
