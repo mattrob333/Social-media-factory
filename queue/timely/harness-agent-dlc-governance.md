@@ -1,3 +1,4 @@
+<!-- FLAGGED: FAIL after 2 grading passes (max_passes reached). Pass 1 FAIL: PLATFORM FIT (too long/multi-idea for X) — condensed per grader's suggested cut. Pass 2 FAIL: ATTRIBUTION (the "8% of orgs" stat needs an in-body source credit, e.g. "According to Harness's announcement...") + PLATFORM FIT again (still reads as 3 stacked ideas: stat, product features, question/lesson). Per schedule.yaml max_passes=2, holding here rather than a 3rd rewrite. Matt: quick fix candidates — either (a) trim to grader's one-liner: "8% of orgs have agentic AI in production. The other 92% aren't stuck on the model — they're stuck on the governance wall. Harness just shipped Agent DLC to solve that." plus a credit clause, or (b) split into a 2-post mini-thread (Post 1: stat + governance claim with Harness credit, Post 2: the eval-gates/AIBOM specifics + the "who approved it, can we roll it back" lesson). -->
 ---
 platform: x
 type: single
@@ -8,13 +9,13 @@ source: "https://www.prnewswire.com/news-releases/introducing-harness-agent-dlc-
 verified_source: "https://www.prnewswire.com/news-releases/introducing-harness-agent-dlc-new-capabilities-for-the-ai-agent-development-lifecycle-302830967.html"
 ---
 
-8% of orgs have agentic AI in production. The other 92% aren't stuck on the model. They're stuck on the governance wall.
+8% of orgs have agentic AI in production. The other 92% aren't stuck on the model — they're stuck on the governance wall.
 
-Harness just shipped Agent DLC — treating agents with the same lifecycle controls as application code. Eval gates, canary deploys, AIBOM, agent discovery, an AI firewall. Everything we already do for shipping software, now for shipping agents.
+Harness just shipped Agent DLC: eval gates, canary deploys, AIBOM, an AI firewall. The same lifecycle controls we already run for shipping code, now for shipping agents.
 
-They're right. And the gap they're naming is the one I keep watching teams faceplant on: you can build an agent in an afternoon, but you can't deploy it safely until you can answer "what just happened, who approved it, and can we roll it back?"
+You can build an agent in an afternoon. You can't deploy it safely until you can answer "who approved it, and can we roll it back?" The teams that solve that ship. Everyone else burns cycles on pilots that never touch production.
 
-The teams that solve this ship. Everyone else burns cycles on beautiful pilots that never touch production.
-
-ATTRIBUTION: none (sparked by Harness Agent DLC announcement, not building on a specific person's claim)
+ATTRIBUTION: Harness (Agent DLC announcement)
+MODE: extend
+DOMAIN: governance/non-human-identity
 CONFIDENCE: 5
