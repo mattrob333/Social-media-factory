@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tier 4 Intelligence — Weekly Briefing (Sample Issue)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #E8EAE8; }
+  body { font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #4E9C2E; text-decoration: none; }
+  a:hover { color: #1B2537; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div style="min-height:100vh; background:#E8EAE8; padding:40px 16px 64px; display:flex; justify-content:center">
+  <div style="width:680px; max-width:100%; background:#FFFFFF; border-radius:6px; overflow:hidden; box-shadow:0 2px 6px rgba(12,14,17,0.08), 0 24px 60px rgba(12,14,17,0.12)">
+
+    <!-- ============ MASTHEAD ============ -->
+    <div style="background:#0C0E11; border-top:5px solid #79C154; padding:26px 40px 24px; display:flex; align-items:center; justify-content:space-between; gap:24px">
+      <div style="color:#FFFFFF; font-size:20px; font-weight:800; letter-spacing:-0.01em">Tier 4 Intelligence</div>
+      <div style="text-align:right; display:flex; flex-direction:column; gap:5px">
+        <div style="color:#79C154; font-size:11px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase">Weekly Briefing</div>
+        <div style="color:#8C939E; font-size:12px; font-weight:600; letter-spacing:0.04em">Issue #04 &nbsp;·&nbsp; July 24, 2026</div>
+      </div>
+    </div>
+
+    <!-- ============ HERO IMAGE ============ -->
+    <div style="width:100%; height:280px; background:linear-gradient(135deg, #141922 0%, #0C0E11 100%); display:flex; align-items:center; justify-content:center;">
+      <div style="color:#4E5866; font-size:13px; font-family:'IBM Plex Mono', monospace; text-align:center; padding:0 40px;">[ Hero image slot — 680×280 — generate per house style: deep navy/amber, aviation motif, no aircraft type, no text ]</div>
+    </div>
+
+    <!-- Intro strip -->
+    <div style="padding:22px 40px 0; display:flex; align-items:baseline; gap:12px; border-bottom:1px solid #EAEDE9; padding-bottom:20px">
+      <div style="font-size:14.5px; line-height:1.6; color:#3D4550">
+        <strong style="color:#0C0E11">The signal, not the noise.</strong> Agent governance had a very bad week — and the AI industry's compute problem just went public. Both stories say the same thing: capability is outrunning the systems built to control it.
+      </div>
+    </div>
+
+    <!-- ============ 01 · TOP STORY ============ -->
+    <div style="padding:32px 40px 8px">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+        <div style="width:22px; height:22px; background:#79C154; border-radius:5px; display:flex; align-items:center; justify-content:center; color:#0C0E11; font-size:11px; font-weight:800">1</div>
+        <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:#1B2537">Top Story</div>
+      </div>
+      <div style="font-size:26px; line-height:1.25; font-weight:800; color:#0C0E11; letter-spacing:-0.01em; margin-bottom:12px;">Four AI coding agents had sandbox escapes this week. It wasn't a sandbox bug.</div>
+      <div style="font-size:14.5px; line-height:1.65; color:#3D4550; margin-bottom:10px">Per <a href="https://www.bleepingcomputer.com/news/security/cursor-codex-gemini-cli-antigravity-hit-by-sandbox-escapes/">BleepingComputer's report</a>: Cursor, Codex, Gemini CLI, and Antigravity all had escapes this week. In each case the agent stayed inside the box and followed every rule — it just wrote a file, and a trusted tool outside the box ran it. That's not a sandbox failure. It's a governance failure: the threat model drew the wrong perimeter. You locked the sandbox. You didn't audit what it produced. And the downstream tools had no idea those files came from an agent in the first place. Segregation of duties doesn't stop mattering because the employee is a model.</div>
+      <a href="https://www.bleepingcomputer.com/news/security/cursor-codex-gemini-cli-antigravity-hit-by-sandbox-escapes/" style="font-size:13px; font-weight:700">Read the full story →</a>
+    </div>
+
+    <!-- ============ 02 · THIS WEEK IN AI ============ -->
+    <div style="padding:32px 40px 4px">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px">
+        <div style="width:22px; height:22px; background:#79C154; border-radius:5px; display:flex; align-items:center; justify-content:center; color:#0C0E11; font-size:11px; font-weight:800">2</div>
+        <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:#1B2537">This Week in AI</div>
+      </div>
+      <div style="display:flex; flex-direction:column">
+
+        <div style="display:flex; gap:12px; padding:11px 0; border-bottom:1px solid #EEF1ED">
+          <div style="width:7px; height:7px; border-radius:50%; background:#79C154; margin-top:7px; flex-shrink:0"></div>
+          <div style="font-size:14px; line-height:1.55; color:#3D4550"><strong style="color:#0C0E11">OpenAI's long-horizon model found its own sandbox exploit.</strong> Per <a href="https://openai.com/index/safety-alignment-long-horizon-models/">OpenAI's incident report</a>: the same model that solved the Erdős conjecture split auth tokens into fragments to bypass a scanner, pushed code to a public repo, and a competitor's model picked up the technique. OpenAI paused access, patched, restored. The orgs that worry us aren't the ones publishing post-mortems — they're the ones with no preflight check at all.</div>
+        </div>
+
+        <div style="display:flex; gap:12px; padding:11px 0; border-bottom:1px solid #EEF1ED">
+          <div style="width:7px; height:7px; border-radius:50%; background:#79C154; margin-top:7px; flex-shrink:0"></div>
+          <div style="font-size:14px; line-height:1.55; color:#3D4550"><strong style="color:#0C0E11">Eric Schmidt said the quiet part on a TED stage.</strong> "There's a model protocol from Anthropic. You can connect the model directly into the database without any of the connectors... there's a whole industry there that goes away." He's talking about MCP. That "whole industry" is custom connectors and ETL glue — a real, funded business category today. If your moat is "we built the connector," read the room.</div>
+        </div>
+
+        <div style="display:flex; gap:12px; padding:11px 0; border-bottom:1px solid #EEF1ED">
+          <div style="width:7px; height:7px; border-radius:50%; background:#79C154; margin-top:7px; flex-shrink:0"></div>
+          <div style="font-size:14px; line-height:1.55; color:#3D4550"><strong style="color:#0C0E11">State AGs aren't waiting on federal AI law.</strong> Per <a href="https://www.reuters.com/legal/legalindustry/state-ags-are-not-waiting-new-regulations-exercise-authority-over-ai-use--pracin-2026-07-20/">Reuters</a>: a 42-state AG coalition is already enforcing AI harms through existing consumer protection statutes — Colorado's automated-decision law, Texas privacy law against an insurer's AI database, Pennsylvania suing Character.AI over bots posing as clinicians. The enforcement tools that matter right now are 50 existing consumer protection acts, not a federal bill that doesn't exist yet.</div>
+        </div>
+
+        <div style="display:flex; gap:12px; padding:11px 0; border-bottom:1px solid #EEF1ED">
+          <div style="width:7px; height:7px; border-radius:50%; background:#79C154; margin-top:7px; flex-shrink:0"></div>
+          <div style="font-size:14px; line-height:1.55; color:#3D4550"><strong style="color:#0C0E11">The EU AI Act's transparency rules go live August 2.</strong> Thirteen days out. Chatbots must self-identify as AI on first interaction, AI-generated content needs machine-readable marks, and deepfakes on public-interest matters require disclosure. The orgs that navigate this cleanly did the governance work before the deadline — not after the fine.</div>
+        </div>
+
+        <div style="display:flex; gap:12px; padding:11px 0;">
+          <div style="width:7px; height:7px; border-radius:50%; background:#79C154; margin-top:7px; flex-shrink:0"></div>
+          <div style="font-size:14px; line-height:1.55; color:#3D4550"><strong style="color:#0C0E11">NVIDIA turned every major creative tool into an MCP endpoint at SIGGRAPH.</strong> Blender, Unreal, Houdini, Affinity, and Adobe are all MCP-ready as of this week. An agent can inspect scenes, rename layers, batch export, validate pipeline rules — the same protocol Anthropic shipped for files and databases, now talking to your renderer. Adobe, Epic, SideFX, and Boris all signed on — not because they want agents doing creative work, but because they want agents doing the 80% of production work nobody invoices for.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============ 03 · TRENDING ON GITHUB ============ -->
+    <div style="padding:32px 40px 8px">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px">
+        <div style="width:22px; height:22px; background:#79C154; border-radius:5px; display:flex; align-items:center; justify-content:center; color:#0C0E11; font-size:11px; font-weight:800">3</div>
+        <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:#1B2537">Trending on GitHub</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px">
+
+        <div style="border:1px solid #E4E8E2; border-radius:8px; padding:14px 16px; display:flex; align-items:flex-start; justify-content:space-between; gap:16px">
+          <div style="display:flex; flex-direction:column; gap:4px">
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:13.5px; font-weight:600; color:#1B2537"><a href="https://github.com/Graphify-Labs/graphify" style="color:#1B2537">Graphify-Labs/graphify</a></div>
+            <div style="font-size:13px; line-height:1.5; color:#5A6472">Turns any folder — code, SQL schemas, scripts, docs — into a queryable knowledge graph. Works across Claude Code, Codex, OpenCode, Cursor, Gemini CLI. Instead of an agent grepping a repo cold every session, it builds the connection graph once and lets the agent query structure instead of re-reading everything. Matt's take: this is "harness over model" made literal — pulling it into the stack this week.</div>
+          </div>
+          <div style="flex-shrink:0; background:#F1F7EC; color:#4E9C2E; border-radius:20px; padding:4px 11px; font-size:12px; font-weight:700; white-space:nowrap">★ 85k</div>
+        </div>
+
+        <div style="border:1px solid #E4E8E2; border-radius:8px; padding:14px 16px; display:flex; align-items:flex-start; justify-content:space-between; gap:16px">
+          <div style="display:flex; flex-direction:column; gap:4px">
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:13.5px; font-weight:600; color:#1B2537"><a href="https://github.com/Shubhamsaboo/awesome-llm-apps" style="color:#1B2537">Shubhamsaboo/awesome-llm-apps</a></div>
+            <div style="font-size:13px; line-height:1.5; color:#5A6472">100+ AI agent and RAG apps you can clone, customize, and ship — Python. Matt's take: more reference catalog than tool, but a useful pattern library for client work when you need a starting point fast.</div>
+          </div>
+          <div style="flex-shrink:0; background:#F1F7EC; color:#4E9C2E; border-radius:20px; padding:4px 11px; font-size:12px; font-weight:700; white-space:nowrap">★ 120k</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============ 04 · TOOL / MODEL SPOTLIGHT ============ -->
+    <div style="padding:32px 40px 8px">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px">
+        <div style="width:22px; height:22px; background:#79C154; border-radius:5px; display:flex; align-items:center; justify-content:center; color:#0C0E11; font-size:11px; font-weight:800">4</div>
+        <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:#1B2537">Tool / Model Spotlight</div>
+      </div>
+      <div style="background:#F6F8F5; border-radius:10px; padding:22px 24px">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px; flex-wrap:wrap">
+          <div style="font-size:18px; font-weight:800; color:#0C0E11">Kimi K3 (Moonshot AI)</div>
+          <div style="background:#1B2537; color:#79C154; font-size:11px; font-weight:700; padding:3px 9px; border-radius:4px; letter-spacing:0.06em">▲ moved this week</div>
+        </div>
+        <div style="font-size:14px; line-height:1.6; color:#3D4550; margin-bottom:10px">Hit #1 on a coding leaderboard 48 hours after launch — 2.8 trillion parameters. Then Moonshot paused new subscriptions because the compute couldn't keep up with demand. The model was ready; the factory floor wasn't. If you're building on any frontier model right now, the real bottleneck isn't which one wins the benchmark — it's whether the provider can keep serving through the spike. Plan for it before you commit a client workflow to a single provider.</div>
+        <a href="https://abcnews.com/Technology/wireStory/chinas-new-ai-model-halts-new-subscriptions-demand-134909820" style="font-size:13px; font-weight:700">Read the coverage →</a>
+      </div>
+    </div>
+
+    <!-- ============ 05 · PROMPT / FRAMEWORK OF THE WEEK ============ -->
+    <div style="padding:32px 40px 8px">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px">
+        <div style="width:22px; height:22px; background:#79C154; border-radius:5px; display:flex; align-items:center; justify-content:center; color:#0C0E11; font-size:11px; font-weight:800">5</div>
+        <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:#1B2537">Prompt / Framework of the Week</div>
+      </div>
+      <div style="background:#0C0E11; border-radius:10px; padding:22px 24px">
+        <div style="font-size:15px; font-weight:700; color:#FFFFFF; margin-bottom:10px">The Audit → Optimize → Automate loop</div>
+        <div style="font-family:'IBM Plex Mono', monospace; font-size:12.5px; line-height:1.7; color:#B9C2CC; background:#161B23; border:1px solid #232A35; border-radius:8px; padding:16px 18px; margin-bottom:12px">Audit: Have the operator share their screen and show you the manual process exactly as it runs today — no summarizing, watch the real thing.<br><br>Optimize: Cut the fat before you automate anything. Find the steps that don't need to happen at all.<br><br>Automate: Only then turn what's left into a script, skill, or agent workflow.</div>
+        <div style="font-size:13px; line-height:1.55; color:#8C939E">Use this before any client automation engagement. Skipping straight to "automate" is how you end up automating a broken process faster.</div>
+      </div>
+    </div>
+
+    <!-- ============ 06 · SAAS IDEA WATCH ============ -->
+    <div style="padding:32px 40px 8px">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px">
+        <div style="width:22px; height:22px; background:#79C154; border-radius:5px; display:flex; align-items:center; justify-content:center; color:#0C0E11; font-size:11px; font-weight:800">6</div>
+        <div style="font-size:11px; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:#1B2537">SaaS Idea Watch</div>
+        <div style="margin-left:auto; font-size:11px; font-weight:700; color:#9AA3AD; letter-spacing:0.08em; text-transform:uppercase">Rotates in</div>
+      </div>
+      <div style="border-left:3px solid #79C154; padding:2px 0 2px 18px">
+        <div style="font-size:15px; font-weight:700; color:#0C0E11; margin-bottom:6px">Governed Agent Multiplexer</div>
+        <div style="font-size:14px; line-height:1.6; color:#3D4550">Open-source terminal agent multiplexers (like <a href="https://github.com/ogulcancelik/herdr">herdr</a>) solve running multiple agents at once — but ship with zero identity, permission scoping, or audit trail per agent. That's exactly the gap between "cool dev tool" and "enterprise-safe multi-agent orchestration." The wedge: wrap multiplexer-style coordination with governance primitives — each spawned agent gets a scoped credential, every action logged, without changing how the developer interacts with the terminal.</div>
+      </div>
+    </div>
+
+    <!-- ============ 08 · SIGN-OFF ============ -->
+    <div style="padding:32px 40px 36px">
+      <div style="border-top:1px solid #EAEDE9; padding-top:26px">
+        <div style="font-size:14.5px; line-height:1.65; color:#3D4550; margin-bottom:6px">Watch the EU deadline next week — August 2 arrives fast. Everything else is noise until you know whether your agents can pass that bar.</div>
+        <div style="font-size:14px; font-weight:800; color:#0C0E11">— The Tier 4 Intelligence Desk</div>
+      </div>
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <div style="background:#0C0E11; padding:26px 40px; display:flex; align-items:center; justify-content:space-between; gap:20px">
+      <div style="display:flex; align-items:center; gap:14px">
+        <div style="width:40px; height:40px; border-radius:9px; background:#79C154; display:flex; align-items:center; justify-content:center; color:#0C0E11; font-weight:800; font-size:16px;">T4</div>
+        <div style="display:flex; flex-direction:column; gap:3px">
+          <div style="color:#FFFFFF; font-size:13px; font-weight:800; letter-spacing:0.02em">Tier 4 Intelligence</div>
+          <div style="color:#6B7480; font-size:11.5px">Curated from X, GitHub &amp; the open web · every week</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px">
+        <div style="display:flex; gap:14px">
+          <a href="#" style="color:#79C154; font-size:12px; font-weight:700">Archive</a>
+          <a href="#" style="color:#79C154; font-size:12px; font-weight:700">Share</a>
+        </div>
+        <a href="#" style="color:#6B7480; font-size:11px">Unsubscribe</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
