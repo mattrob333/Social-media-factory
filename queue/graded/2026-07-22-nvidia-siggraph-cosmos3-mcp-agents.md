@@ -1,3 +1,4 @@
+<!-- GRADED: PASS (all 7 criteria by mcp_openrouter_chat_send, model: deepseek/deepseek-v4-flash, pass 1) -->
 ---
 platform: x
 type: single
@@ -17,3 +18,8 @@ For most operators this means one thing: you can now deploy an agent that reason
 The old debate was "open vs closed models." The real debate is "where does the inference happen and who controls the data path?" NVIDIA just made the on-device, local-toolchain answer a lot more practical.
 
 If you're building for construction, manufacturing, or physical infrastructure ops, this week's SIGGRAPH announcements matter more than any model release.
+
+MODE: translate
+DOMAIN: workflow automation & agent building / construction-AI
+ATTRIBUTION: NVIDIA (SIGGraph announcement) — credited in-body
+CONFIDENCE: 5

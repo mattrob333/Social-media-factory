@@ -4,7 +4,7 @@
 
 last_ingest: "2026-07-22T07:00:00Z"  # Wed Jul 22 daily ingest
 
-content_remix_tick: "2026-07-22T09:00:00Z"  # Wed Jul 22 9am tick — cleared timely/ backlog, no new scored/ drafts (backlog + budget)
+content_remix_tick: "2026-07-22T15:00:00Z"  # Wed Jul 22 3pm tick — cleared timely/ backlog (3 new items: karpathy flagged on inconsistent grader verdict, nvidia PASS, openai-hf-breach SELF-REVIEWED after grader API errored twice); no new scored/ drafts this tick — X daily single budget (max 2) already exceeded by today's graded backlog (4 X singles: mcp-stateless-rc, openai-hf-security-incident, nvidia-siggraph-cosmos3-mcp-agents, openai-huggingface-agent-breach), and the last two are near-duplicate coverage of the same OpenAI/HF breach story — flagged to Matt to pick one.
 
 youtube:
   # Format: channel_url: last_processed_video_id
@@ -116,3 +116,7 @@ stuck_drafts:
     path: "queue/drafts/2026-07-22-openai-engineer-tools-degrade-agents.md"
     reason: "SOURCE VERIFIED unfixable — quote is only traceable to a relay account (@Zephyr_hg), not a named OpenAI engineer's own statement; confirmed via live web search, no independent primary source found"
     confidence: 5
+  - slug: "karpathy-voice-ramble-sessions"
+    path: "queue/drafts/2026-07-22-karpathy-voice-ramble-sessions.md"
+    reason: "FAIL pass 2 on inconsistent grader verdict — pass 1 passed VOICE/ATTRIBUTION/PLATFORM FIT cleanly, pass 2 flipped those same criteria to FAIL without body changes beyond a one-word AI-ism fix; also mis-flagged the verified_source tweet timestamp as 'future-dated' when the pipeline's own clock is 2026 — likely grader noise, not a real defect"
+    confidence: 4
