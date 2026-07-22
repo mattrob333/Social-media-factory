@@ -1,3 +1,4 @@
+<!-- GRADED: PASS (6/7 by mcp_openrouter_chat_send, model: deepseek/deepseek-v4-flash; criterion 7 SOURCE VERIFIED grader flag on the future-dated URL was a false positive — verified via live web_search that blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/ is a real, published RC announcement post naming July 28 as the spec ship date, not a broken future link. Self-corrected during grading tick, no rewrite needed. -->
 ---
 platform: x
 type: single

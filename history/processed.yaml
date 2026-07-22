@@ -4,7 +4,7 @@
 
 last_ingest: "2026-07-22T07:00:00Z"  # Wed Jul 22 daily ingest
 
-content_remix_tick: "2026-07-22T07:00:00Z"  # Wed Jul 22 — Top 10 Tools day
+content_remix_tick: "2026-07-22T09:00:00Z"  # Wed Jul 22 9am tick — cleared timely/ backlog, no new scored/ drafts (backlog + budget)
 
 youtube:
   # Format: channel_url: last_processed_video_id
@@ -103,4 +103,16 @@ stuck_drafts:
   - slug: "openclaw-foundation-independent"
     path: "queue/drafts/2026-07-09-openclaw-foundation-independent.md"
     reason: "FAIL after 2 passes"
+    confidence: 5
+  - slug: "trending-repos-x-thread"
+    path: "queue/drafts/2026-07-20-trending-repos-x-thread.md"
+    reason: "FAIL after 2 passes (AI-isms in agent-personification phrasing)"
+    confidence: 4
+  - slug: "gemini-35-flash-cyber"
+    path: "queue/drafts/2026-07-22-gemini-35-flash-cyber.md"
+    reason: "FAIL pass 2 on VOICE MATCH — grader flagged Matt's own canonical closer line as sloganeering (likely false positive, see file note)"
+    confidence: 5
+  - slug: "openai-engineer-tools-degrade-agents"
+    path: "queue/drafts/2026-07-22-openai-engineer-tools-degrade-agents.md"
+    reason: "SOURCE VERIFIED unfixable — quote is only traceable to a relay account (@Zephyr_hg), not a named OpenAI engineer's own statement; confirmed via live web search, no independent primary source found"
     confidence: 5
