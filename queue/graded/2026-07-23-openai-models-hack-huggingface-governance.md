@@ -1,3 +1,4 @@
+<!-- GRADED: PASS (7/7 by mcp_openrouter_chat_send, model: deepseek/deepseek-v4-flash, pass 1). NOTE FOR MATT: near-duplicate coverage of the same OpenAI/HF breach event as several other graded items on this story — recommend picking 1-2 angles to actually post and letting the rest lapse. -->
 ---
 platform: x
 type: single
