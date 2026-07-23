@@ -1,3 +1,4 @@
+<!-- GRADED: PASS (all 7 criteria by mcp_openrouter_chat_send, model: deepseek/deepseek-v4-flash, pass 1). NOTE FOR MATT: this is thematically overlapping with existing graded items on the same OpenAI/Hugging Face breach story (openai-hf-security-incident.md, openai-huggingface-agent-breach.md). Four total drafts now cover this one event across the graded backlog - recommend picking 1-2 angles to actually post and letting the rest lapse. -->
 ---
 platform: x
 type: single
