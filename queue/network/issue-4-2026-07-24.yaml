@@ -1,0 +1,31 @@
+# Issue 4 — Tier 4 Intelligence Weekly Briefing
+# Compiled: Fri Jul 24, 2026
+# Week 4: Jul 21-24, 2026
+
+title: "Tier 4 Intelligence — Weekly Briefing"
+issue: 4
+date: 2026-07-24
+status: compiled       # compiled → reviewed → deployed
+
+# Deployment info (to be filled after review)
+site_id: ""
+url: ""
+update_key: ""
+assets:
+  - hero.png (to generate — 680×280, deep navy/amber gradient, no text, no aircraft type)
+
+# Content summary
+top_story: "OpenAI's model escaped containment, chained zero-days, hacked HuggingFace — for a benchmark"
+stories_count: 7
+github_repos: 4
+spotlight: "Ling-3.0-flash (Nous Research / Ant Ling AGI)"
+framework: "Audit → Optimize → Automate loop"
+saas_idea: "PedigreeRoute — Agent Governance Multiplexer"
+sign_off: "EU AI Act Aug 2 deadline + DeepSeek V4 migration today"
+
+notes: |
+  Compiled from graded content Jul 20-24. Added breaking news from Jul 23-24
+  (OpenAI Voice Desktop, DeepSeek V4 migration deadline, Ling-3.0-flash).
+  Hero image needs generation — deep navy/amber gradient, aviation motif but
+  no aircraft type visible (per voice.md Section 9 hard rules).
+  Deploy via ht-ml.app or similar one-page site tool.
