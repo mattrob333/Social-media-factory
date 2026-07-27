@@ -6,9 +6,10 @@ theme: news-jack
 mode: extend
 source: "https://x.com/nvidia/status/2081666629264449730"
 verified_source: "https://www.theverge.com/ai-artificial-intelligence/971281/nvidia-open-secure-ai-alliance-cybersecurity"
+status: PASS (graded 2026-07-27, required 1 rewrite for criterion 5 ATTRIBUTION)
 ---
 
-40 companies — NVIDIA, Microsoft, SpaceX, HPE, Palantir, HPE, Nous Research — just launched the Open Secure AI Alliance for open agent security tooling.
+Per NVIDIA's announcement (via The Verge): 40 companies — NVIDIA, Microsoft, SpaceX, HPE, Palantir, Nous Research — just launched the Open Secure AI Alliance for open agent security tooling.
 
 OpenAI and Google are notably absent. That's a signal.
 
