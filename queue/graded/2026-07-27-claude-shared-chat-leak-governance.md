@@ -7,9 +7,10 @@ mode: amplify-apply
 source: "https://404media.co/tons-of-peoples-claude-chats-and-creations-are-exposed-on-google"
 verified_source: "https://404media.co/tons-of-peoples-claude-chats-and-creations-are-exposed-on-google"
 attribution: "Joseph Cox / 404 Media"
+status: PASS (graded 2026-07-27, pass 2 of 2 — pass 1 failed criterion 5 ATTRIBUTION, fixed by naming Joseph Cox/404 Media in the opening line)
 ---
 
-Claude conversations containing wallet keys, medical records, and therapy sessions are showing up in Google search.
+A 404 Media investigation by Joseph Cox found Claude conversations containing wallet keys, medical records, and therapy sessions showing up in Google search.
 
 The immediate hot take: "Claude is insecure." That's the wrong target.
 

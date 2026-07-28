@@ -7,6 +7,7 @@ mode: extend
 source: "https://x.com/AnthropicAI/status/2081864750296658008"
 verified_source: "https://www.anthropic.com/news/position-open-weights-models"
 attribution: "Dario Amodei / Anthropic Blog"
+status: PASS (graded 2026-07-27, first-pass pass)
 ---
 
 Dario published Anthropic's position on open-weights today. The debate is thoughtful and mostly right — chip controls, anti-distillation, mandatory safety testing. All reasonable.

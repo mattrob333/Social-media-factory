@@ -80,9 +80,20 @@ github_trending:
     "microsoft/agent-governance-toolkit": "2026-07-27"      # 7★/d — agent governance (low velocity, high relevance)
   note: "Full daily scan Jul 27. New entries: pbakaus/impeccable (AI harness design language), pingdotgg/t3code. Dropped off: mattpocock/skills (was 1,740★/d yesterday), affaan-m/ECC, Lordog/dive-into-llms, palmier-io/palmier-pro. Top relevance for thread: ego-lite (agent browser), alibaba/open-code-review (hybrid code review), impeccable (harness design), book-to-skill (knowledge pipeline), block/buzz (swarm pattern). Thread drafted and saved to queue/drafts/."
 
-skipped: []
+skipped:
+  - slug: "nvidia-open-secure-ai-alliance (timely duplicate)"
+    path: "queue/timely/nvidia-open-secure-ai-alliance.md (removed 2026-07-27 tick 3)"
+    reason: "Same event (NVIDIA Open Secure AI Alliance launch) already has a PASS-graded x single in queue/graded/2026-07-27-open-secure-ai-alliance.md (source: nvidia tweet + The Verge, extend mode). This second draft (source: steipete tweet + NVIDIA blog) covered the identical announcement — posting both would duplicate content on X same day. Discarded rather than graded/counted against daily x-singles budget."
 
 stuck_drafts:
+  - slug: "trending-repos-x-thread (2026-07-27)"
+    path: "queue/drafts/2026-07-27-trending-repos-x-thread.md"
+    reason: "FAIL after 2 passes on criterion 6 PLATFORM FIT — grader's pass-2 reason (round-up of independent repos isn't 'genuine steps/parts') conflicts with content-themes.yaml's own trending-repos spec and prior passed threads in this exact shape. Likely grader false positive; flagged for Matt to approve as-is or split."
+    confidence: 4
+  - slug: "openai-agent-escaped-governance"
+    path: "queue/drafts/2026-07-27-openai-agent-escaped-governance.md"
+    reason: "FAIL after 2 passes (criterion 5 ATTRIBUTION — built on Reuters' reported timeline but never credits Reuters in the post body; verified_source only in frontmatter). One-line fix available: add 'via Reuters'/'(per Reuters)' credit. Moved from queue/timely/ to queue/drafts/ this tick since grading is exhausted."
+    confidence: 5
   - slug: "musk-apple-openai-lawsuit-distraction"
     path: "queue/drafts/2026-07-13-musk-apple-openai-lawsuit-distraction.md"
     reason: "FAIL after 2 passes"
