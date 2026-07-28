@@ -6,6 +6,7 @@ theme: news-jack
 mode: extend
 source: "https://x.com/joaomdmoura/status/2082133609264374271"
 verified_source: "https://x.com/joaomdmoura/status/2082133609264374271"
+graded: "PASS — all 7 criteria, deepseek/deepseek-v4-flash, pass 1/2"
 ---
 
 CrewAI just launched Crew Studio. Discover, Build, Own, Run — four pillars for enterprise agent deployment.

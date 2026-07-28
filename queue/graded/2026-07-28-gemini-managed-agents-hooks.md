@@ -6,6 +6,7 @@ theme: news-jack
 mode: translate
 source: "https://x.com/OfficialLoganK/status/2082138993546899711"
 verified_source: "https://x.com/OfficialLoganK/status/2082138993546899711"
+graded: "PASS — all 7 criteria, deepseek/deepseek-v4-flash, pass 1/2"
 ---
 
 Google shipped environment hooks for Gemini Managed Agents today.

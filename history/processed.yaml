@@ -4,7 +4,29 @@
 
 last_ingest: "2026-07-28T06:00:00Z"  # Tue Jul 28 — bookmark-spotlight + news-jack (as needed)
 
-content_remix_tick: "2026-07-28T09:00:00Z"  # Tue Jul 28, 9am tick — cleared queue/timely/ backlog: cowork-built-in-1.5-weeks (PASS pass 1/2), french-regulator-84% (PASS pass 1/2), steipete-agent-to-agent-bug-fix (PASS pass 2/2, added @steipete in-body credit for ATTRIBUTION) all graded and moved to queue/graded/. openai-agent-escape-kill-switch-act FLAGGED to Matt — fails SOURCE VERIFIED (Hugging Face breach premise not traceable to a primary source, only the kill-switch bill itself is verified) and CONCRETE; left in queue/timely/ with HTML comment, no 2nd pass burned per special-case rule. No new theme drafts generated this tick: approval-queue backlog is already ~13 PASS-graded items (9 from this morning's ingest tick + 3 new) plus 16 older stuck drafts in queue/drafts/, all unapproved and far exceeding schedule.yaml's daily_limits (3 X + 1 LinkedIn/day) — generating more today would deepen the backlog rather than fix the actual bottleneck (Matt's Telegram approval throughput). Flagged full backlog in tick report for Matt to triage.
+content_remix_tick: >-
+  2026-07-28T20:00:00Z — Tue Jul 28, ~2pm CT tick — cleared queue/timely/
+  backlog of 4 already-drafted news-jack items: crew-studio-own-run-govern
+  (PASS pass 1/2), gemini-managed-agents-hooks (PASS pass 1/2),
+  dynatrace-agent-builder (PASS pass 2/2, shortened for PLATFORM FIT),
+  anthropic-open-weights-nhi-extend (FAILED pass 2/2 on SOURCE VERIFIED —
+  the inserted "79% zero governance" stat isn't backed by the Anthropic
+  verified_source; moved to queue/drafts/ flagged, not rewrite-fixable per
+  special-case rule). 2 of the 4 (anthropic-open-weights, dynatrace) had
+  already blown the 4h news-jack SLA (detected 14:00Z, graded ~20:00Z)
+  before this tick closed them out — flagging for review of why the
+  14:00-17:30 gap between drafting and grading happened. No new theme
+  drafts generated this tick (Mon/Tue calendar = bookmark-spotlight +
+  news-jack): the approval-queue backlog is still ~16 PASS-graded items
+  sitting in queue/graded/ from today alone plus the pre-existing older
+  backlog, and queue/approved/ has zero July 28 entries — nothing has
+  actually reached Matt's Telegram/been approved yet. Generating more
+  today would deepen the real bottleneck (approval throughput) rather
+  than fix it, consistent with this morning's 09:00 tick's same call.
+  queue/drafts/ backlog (16 old items + 1 new flag from this tick, all
+  already HTML-comment-flagged from prior ticks with specific FIX
+  instructions) is untouched — no unflagged/ungraded items exist in
+  queue/drafts/ per this tick's grep audit.
 
 youtube:
   channels:
