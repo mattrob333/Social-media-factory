@@ -4,6 +4,37 @@
 
 last_ingest: "2026-07-28T06:00:00Z"  # Tue Jul 28 — bookmark-spotlight + news-jack (as needed)
 
+content_remix_tick_2100z: >-
+  2026-07-28T21:00:00Z — Tue Jul 28, ~8pm CT tick. git status clean at start
+  (no unfinished work from prior tick to resume). X daily budget already
+  blown before this tick started: 6 X singles graded today vs
+  daily_limits.x.max_total=3 (1 thread+2 singles) — all from earlier
+  news-jack ticks that didn't check cross-tick budget. Did NOT add any new
+  X drafts this tick to avoid deepening that overrun; flagging the
+  news-jack fast lane's missing budget check as a pipeline bug (news_jack_scan
+  runs every 4h independent of daily_limits — needs a shared counter).
+  queue/timely/ had 1 genuinely new undrafted item (Nvidia $5B investment in
+  Sutskever's Safe Superintelligence, detected 17:32Z, ~3.5h into the 4h
+  SLA) plus 2 stale already-processed duplicates (gemini-managed-agents-
+  environment-hooks.md — already drafted+graded as
+  graded/2026-07-28-gemini-managed-agents-hooks.md; openai-agent-escape-
+  kill-switch-act.md — same underlying incident already flagged as
+  drafts/2026-07-27-openai-agent-escaped-governance.md) which were deleted
+  from queue/timely/ as cleanup, no new grading needed. Drafted the SSI/
+  Nvidia item as LinkedIn (not X) — news-jack format explicitly allows
+  LinkedIn when it lands B2B, and LinkedIn's daily budget (1/day) was
+  untouched today, so this met the SLA without adding to the X overrun.
+  Graded via deepseek/deepseek-v4-flash: pass 1/2 FAILED (AI-ISMS/VOICE
+  MATCH/PLATFORM FIT — bowling-bumper metaphor too cute, X-length idea
+  padded into LinkedIn length); rewrote per FIX (cut the metaphor, tightened
+  close); pass 2/2 ALL PASS. Moved to queue/graded/. No bookmark-spotlight
+  generated this tick — Tuesday's theme is X-shaped (bookmark-spotlight is
+  historically drafted as X single/thread) and X budget is already at 2x
+  the daily cap, so adding more would compound the approval-queue backlog
+  problem flagged in the prior tick rather than fix it. Approval-queue
+  backlog is unchanged/growing: queue/approved/ still has zero July 28
+  entries — Matt has not yet approved anything from today via Telegram.
+
 content_remix_tick: >-
   2026-07-28T20:00:00Z — Tue Jul 28, ~2pm CT tick — cleared queue/timely/
   backlog of 4 already-drafted news-jack items: crew-studio-own-run-govern
