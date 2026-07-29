@@ -1,3 +1,4 @@
+<!-- GRADED: PASS (all 7 criteria, mcp_openrouter_chat_send, model: deepseek/deepseek-v4-flash, 2026-07-29) -->
 ---
 platform: x
 type: single
